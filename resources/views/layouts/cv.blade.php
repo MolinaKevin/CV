@@ -24,12 +24,12 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="h-screen bg-gray-100 flex flex-col">
-            <header class="text-gray-600 body-font flex-1 flex-initial">
+        <div class="min-h-screen bg-gray-100 ">
+            <header class="text-gray-600 body-font ">
                 @livewire('navigation-menu')
             </header>
             <!-- Page Content -->
-            <section class="h-full w-full container mx-auto flex items-center justify-center flex-col flex-1">
+            <section class="h-full w-full container mx-auto  items-center justify-center ">
                 {{ $slot }}
             </section>
         </div>

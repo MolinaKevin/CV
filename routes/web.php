@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Livewire\{
-    Curriculum, Cart, Contact
+    Curriculum, Cart, Contact, Timeline
 };
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',Curriculum::class)->name('index');
 
 Route::get('/cart',Cart::class)->name('cart');
+
 Route::get('/contact',Contact::class)->name('contact');
+
+Route::get('/timeline',Timeline::class)->name('timeline');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

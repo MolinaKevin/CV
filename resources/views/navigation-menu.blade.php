@@ -16,6 +16,9 @@
         <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('contact')">
             {{ __('Contact') }}
         </x-nav-link>
+        <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+            {{ __('Timeline') }}
+        </x-nav-link>
     </nav>
     <!-- Hamburger -->
     <div class="-mr-2 flex items-center sm:hidden">
