@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Livewire\{
-    Curriculum, Cart, Contact, Timeline
+    Curriculum, Cart, Contact, Timeline, Index
 };
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',Curriculum::class)->name('index');
+Route::get('/',Index::class)->name('index');
+
+Route::get('/skills',Curriculum::class)->name('skills');
 
 Route::get('/cart',Cart::class)->name('cart');
 

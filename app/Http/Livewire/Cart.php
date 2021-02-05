@@ -9,9 +9,14 @@ use Livewire\Component;
 class Cart extends Component
 {
 
-    public $products = [];
+    public $queryString = ['search' => ['except' => ''], 'type' => ['except' => '']];
     public $selection = [];
-
+    public $selectionIn = [];
+    public $selectionOut = [];
+    public $selectionDiverse = [];
+    public $search = '';
+    public $type;
+    public $modal = false;
 
     public function removeProduct($select) {
         foreach($this->selection as $key => $one) {
@@ -30,15 +35,54 @@ class Cart extends Component
         }
         if ($tmp == false) {
             $this->selection[] = $product;
+            if ($product->me == 1) {
+                $this->selectionIn[] = $product;
+            } elseif ($product->me == 3) {
+                $this->selectionDiverse[] = $product;
+            } else {
+                $this->selectionOut[] = $product;
+            }
+        }
+    }
+
+    public function removeProducts() {
+        $this->selection = [];
+    }
+
+    public function showModal() {
+        $this->modal = true;
+    }
+
+    public function limpiar() {
+        $this->search = '';
+        $this->type = null;
+    }
+
+    public function getTipoProperty()
+    {
+        switch ($this->type) {
+            case 0:
+                return "Todos";
+                break;
+            case 1:
+                return "Hard Skills";
+                break;
+            case 2:
+                return "Soft Skills";
+                break;
+            default:
+                return "Todos";
+                break;
         }
     }
 
     public function render()
     {
-        $this->products =  Product::all();
-
         return view('curriculum.cart',[
-            'products' => $this->products
+            'products' => Product::
+                where('name','LIKE',"%{$this->search}%")
+                ->where('tech','LIKE',"%{$this->type}%")
+                ->get()
         ])->layout('layouts.cv');
     }
 }

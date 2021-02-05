@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script defer src="https://friconix.com/cdn/friconix.js"> </script>
 
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/28bc186263.js" crossorigin="anonymous"></script>
@@ -20,12 +21,34 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <style>
+            @keyframes fadeIn {
+
+
+                0% {
+                    opacity: 0;
+                    /*transform:   perspective(2500px) rotateX(-100deg);*/
+                    transform: translate3d(-100px, 0, 0);
+                }
+                100% {
+                    opacity: 1;
+                    /*transform:  perspective(0) rotateX(0deg);*/
+                    transform: none;
+                }
+            }
+
+            .animate-fadeIn {
+                animation: fadeIn 0.6s  cubic-bezier(.250, .100, .250, 1) forwards;
+            }
+
+
+        </style>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100 ">
-            <header class="text-gray-600 body-font ">
+        <div class="min-h-screen bg-paleta-quinario ">
+            <header class=" body-font ">
                 @livewire('navigation-menu')
             </header>
             <!-- Page Content -->
@@ -37,5 +60,26 @@
         @stack('modals')
 
         @livewireScripts
+        <script type="text/javascript">
+            const callback = function (entries) {
+              entries.forEach((entry) => {
+                console.log(entry);
+
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animate-fadeIn");
+                } else {
+                  entry.target.classList.remove("animate-fadeIn");
+                }
+              });
+            };
+
+            const observer = new IntersectionObserver(callback);
+
+            const targets = document.querySelectorAll(".js-show-on-scroll");
+            targets.forEach(function (target) {
+              target.classList.add("opacity-0");
+              observer.observe(target);
+            });
+       </script>
     </body>
 </html>
