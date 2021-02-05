@@ -27,10 +27,11 @@ class Cart extends Component
     }
 
     public function addProduct(Product $product) {
-        dd($product);
         $tmp = false;
+
         foreach($this->selection as $key => $one) {
             if($one["id"] == $product->id) {
+                dd($one["id"]);
                 $tmp = true;
             }
         }
