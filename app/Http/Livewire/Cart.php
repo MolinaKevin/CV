@@ -31,7 +31,6 @@ class Cart extends Component
 
         foreach($this->selection as $key => $one) {
             if($one["id"] == $product->id) {
-                dd($one["id"]);
                 $tmp = true;
             }
         }
