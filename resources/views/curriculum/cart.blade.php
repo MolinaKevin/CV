@@ -13,7 +13,7 @@
                             <span class="title-font font-medium text-paleta-quinario">{!! $select["name"] !!}</span>
                             <button
                                 class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-secundario hover:bg-paleta-secundario hover:text-paleta-quinario ml-auto mr-0 "
-                                wire:click="removeProduct({{ $select["id"] }})"
+                                wire:click="removeProduct({!! $select["id"] !!})"
                             >
                                 <i class="fas fa-times"></i>
                             </button>
