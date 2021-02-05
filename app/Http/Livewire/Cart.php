@@ -80,9 +80,9 @@ class Cart extends Component
     {
         return view('curriculum.cart',[
             'products' => Product::
-                where('name','LIKE',"%{$this->search}%")
-                ->where('tech','LIKE',"%{$this->type}%")
-                ->get()
+                //where('name','LIKE',"%{$this->search}%")
+                //->where('tech','LIKE',"%{$this->type}%")
+                all()
         ])->layout('layouts.cv');
     }
 }
