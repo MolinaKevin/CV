@@ -27,22 +27,7 @@ class Cart extends Component
     }
 
     public function addProduct(Product $product) {
-        $tmp = false;
-        foreach($this->selection as $key => $one) {
-            if($one["id"] == $product->id) {
-                $tmp = true;
-            }
-        }
-        if ($tmp == false) {
-            $this->selection[] = $product;
-            if ($product->me == 1) {
-                $this->selectionIn[] = $product;
-            } elseif ($product->me == 3) {
-                $this->selectionDiverse[] = $product;
-            } else {
-                $this->selectionOut[] = $product;
-            }
-        }
+
     }
 
     public function removeProducts() {
