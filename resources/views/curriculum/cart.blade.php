@@ -94,7 +94,7 @@
     <div class="flex flex-wrap -m-4">
         @if($products->count())
             @foreach($products as $product)
-                <div wire:click="addProduct({{ $product }})" class="xl:w-1/3 md:w-1/2 p-4">
+                <div wire:click="addProduct({{ $product->id }})" class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-paleta-secundario bg-paleta-terciario p-6 rounded-lg cursor-pointer transform hover:scale-105 transition duration-300 erase-in-out">
                         <div class="w-10 h-10 inline-flex items-center justify-center rounded-full text-paleta-primario mb-4">
                             <i class="{{ $product->icon }} fa-2x"></i>
