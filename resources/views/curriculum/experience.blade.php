@@ -14,7 +14,7 @@
 
         </div>
         <!--img class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"-->
-        <div class="flex flex-col text-center w-full">
+        <div class="flex flex-col text-center w-full pb-2">
             @switch($selected->type)
                 @case(1)
                     <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{!! $selected->content !!}</p>
@@ -38,6 +38,50 @@
                         <div class="px-20">
                           <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">LOCACION</h2>
                           <p class="mt-1">{!! $selected->content !!}</p>
+                        </div>
+                      </div>
+                    </div>
+                    @break
+                @case(4)
+                    <div class="container px-5 py-4 mx-auto">
+                        <div class="flex flex-wrap -m-4">
+                            @foreach($selected->screenshots as $image)
+                                <div class="lg:w-1/3 sm:w-1/2 p-4 h-50">
+                                    <div class="flex relative h-60">
+                                      <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="{{ asset('storage/images/' . $image->path) }}">
+                                      <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-90">
+                                        <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">{{ $image->subtitle }}</h2>
+                                        <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $image->title }}</h1>
+                                        <p class="leading-relaxed">{!! $image->content !!}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                             @endforeach
+                        </div>
+                    </div>
+                    @break
+                @case(5)
+                    <div class="flex flex-wrap md:-m-2 -m-1">
+                      <div class="flex flex-wrap w-1/2">
+                        <div class="md:p-2 p-1 w-1/2">
+                          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/500x300">
+                        </div>
+                        <div class="md:p-2 p-1 w-1/2">
+                          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/501x301">
+                        </div>
+                        <div class="md:p-2 p-1 w-full">
+                          <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/600x360">
+                        </div>
+                      </div>
+                      <div class="flex flex-wrap w-1/2">
+                        <div class="md:p-2 p-1 w-full">
+                          <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/601x361">
+                        </div>
+                        <div class="md:p-2 p-1 w-1/2">
+                          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/502x302">
+                        </div>
+                        <div class="md:p-2 p-1 w-1/2">
+                          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/503x303">
                         </div>
                       </div>
                     </div>

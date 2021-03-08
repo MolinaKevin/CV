@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
+use App\Models\Screenshot;
 
 class Box extends Model
 {
@@ -16,5 +17,9 @@ class Box extends Model
 
     public function products() {
         return $this->belongsToMany(Product::class)->inRandomOrder();
+    }
+
+    public function screenshots() {
+        return $this->hasMany(Screenshot::class);
     }
 }
