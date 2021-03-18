@@ -4,7 +4,7 @@
             @foreach($boxes as $box)
 
                 <a
-                    class="sm:px-24 py-3 w-1/2 sm:w-1/{{ $count }} justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-indigo-500 text-indigo-500' : 'border-gray-200 hover:text-gray-900' }} tracking-wider rounded-t cursor-pointer"
+                    class="sm:px-24 py-3 w-1/2 sm:w-1/{{ $count }} justify-center sm:justify-start border-b-2 title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-cuaternario text-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario hover:border-paleta-cuaternario hover:text-paleta-cuaternario' }} tracking-wider  cursor-pointer"
                     wire:click="$emit('changeBox',{{ $box->id }})"
                 >
                     <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
@@ -17,14 +17,14 @@
         <div class="flex flex-col text-center w-full pb-2">
             @switch($selected->type)
                 @case(1)
-                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{!! $selected->content !!}</p>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-paleta-secundario">{!! $selected->content !!}</p>
                     @break
                 @case(2)
                     <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
                         @foreach($selected->products as $product)
                             <div class="p-2 sm:w-1/5 w-full">
-                                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-                                    <i class="{{ $product->icon }} fa-2x text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"></i>
+                                <div class="bg-paleta-primario rounded flex p-4 h-full items-center">
+                                    <i class="{{ $product->icon }} fa-2x text-paleta-secundario w-6 h-6 flex-shrink-0 mr-4"></i>
                                     <span class="title-font font-medium">{{ $product->name }}</span>
                                 </div>
                             </div>
@@ -49,10 +49,10 @@
                                 <div class="lg:w-1/3 sm:w-1/2 p-4 h-50">
                                     <div class="flex relative h-60">
                                       <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="{{ asset('storage/images/' . $image->path) }}">
-                                      <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-90">
-                                        <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">{{ $image->subtitle }}</h2>
-                                        <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $image->title }}</h1>
-                                        <p class="leading-relaxed">{!! $image->content !!}</p>
+                                      <div class="px-8 py-10 relative z-10 w-full border-4 border-paleta-secundario bg-paleta-primario opacity-0 hover:opacity-90">
+                                        <h2 class="tracking-widest text-sm title-font font-medium text-paleta-quinario mb-1">{{ $image->subtitle }}</h2>
+                                        <h1 class="title-font text-lg font-medium text-paleta-secundario mb-3">{{ $image->title }}</h1>
+                                        <p class="leading-relaxed text-paleta-secundario">{!! $image->content !!}</p>
                                       </div>
                                     </div>
                                   </div>

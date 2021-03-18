@@ -6,12 +6,17 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Box;
+use Spatie\Translatable\HasTranslations;
+
 
 class Step extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
-    protected $fillable = ['init','end','title','description','place'];
+    protected $translatable = ['description'];
+
+    protected $fillable = ['init','end','title','description','place','key'];
 
     /** Getters **/
 

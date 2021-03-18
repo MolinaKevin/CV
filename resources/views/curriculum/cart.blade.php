@@ -8,11 +8,11 @@
             <div class="flex flex-wrap lg:w-2/3 sm:mb-2 -mx-2 border-l border-paleta-secundario ">
                 @foreach($selection as $select)
                     <div class="p-2 sm:w-1/4 w-1/2">
-                        <div class="bg-paleta-cuaternario rounded flex p-4 items-center" >
+                        <div class="bg-paleta-secundario rounded flex p-4 items-center" >
                             <i class="{{ $select["icon"] }} fa-2x text-paleta-quinario w-6 h-6 flex-shrink-0 mr-4"></i>
                             <span class="title-font font-medium text-paleta-quinario">{!! $select["name"] !!}</span>
                             <button
-                                class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-secundario hover:bg-paleta-secundario hover:text-paleta-quinario ml-auto mr-0 "
+                                class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-secundario ml-auto mr-0 "
                                 wire:click="removeProduct({!! $select["id"] !!})"
                             >
                                 <i class="fas fa-times"></i>
@@ -23,11 +23,11 @@
                 @endforeach
                 <div class="p-2 sm:w-1/4 w-1/2">
                         <div
-                            class="bg-paleta-cuaternario rounded flex p-4 items-center cursor-pointer hover:bg-paleta-secundario hover:text-paleta-quinario"
+                            class="bg-paleta-secundario text-paleta-cuaternario rounded flex p-4 items-center cursor-pointer hover:bg-paleta-cuaternario hover:text-paleta-secundario"
                             wire:click="removeProducts"
 >
-                            <i class="fas fa-times fa-2x text-paleta-quinario w-6 h-6 flex-shrink-0 mr-4"></i>
-                            <span class="title-font font-medium text-paleta-quinario">Limpiar</span>
+                            <i class="fas fa-times fa-2x w-6 h-6 flex-shrink-0 mr-4"></i>
+                            <span class="title-font font-medium">Limpiar</span>
                             <button
                                 class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-secundario hover:bg-paleta-secundario hover:text-paleta-quinario ml-auto mr-0 "
                                                             >
@@ -39,8 +39,8 @@
         </div>
     @else
         <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-paleta-terciario">Que tecnologias, skills?</h1>
-          <p class="lg:w-1/2 w-full leading-relaxed text-paleta-terciario">Si no esta seguro de contactarme, dejeme ayudarle a buscar profesionales.</p>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-paleta-secundario">Que tecnologias, skills?</h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-paleta-secundario">Si no esta seguro de contactarme, dejeme ayudarle a buscar profesionales.</p>
         </div>
     @endif
     <div class="flex flex-wrap -m-4 mb-3">
@@ -54,7 +54,7 @@
 
                 <input
                     type="text"
-                    class="pl-10 pr-4 w-full py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-paleta-cuaternario dark:border-paleta-cuaternario rounded-lg focus:border-paleta-cuaternario dark:focus:border-paleta-cuaternario focus:outline-none focus:ring focus:ring-paleta-cuaternario"
+                    class="pl-10 pr-4 w-full py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-paleta-secundario dark:border-paleta-secundario rounded-lg focus:border-paleta-secundario dark:focus:border-paleta-secundario focus:outline-none focus:ring focus:ring-paleta-secundario"
                     placeholder="Search"
                     wire:model="search"
                 />
@@ -64,7 +64,7 @@
         <div class="{{ $selection ? 'xl:w-1/3' : 'w-1/2' }} md:w-1/2 p-4 flex ">
             <select
                 wire:model="type"
-                class="{{ ($search || $type != '0' ) ? 'w-full' : 'w-1/2 mr-2' }} rounded-lg focus:border-paleta-cuaternario focus:outline-none focus:ring focus:ring-paleta-cuaternario">
+                class="{{ ($search || $type != '0' ) ? 'w-full' : 'w-1/2 mr-2' }} rounded-lg border-paleta-secundario focus:border-paleta-secundario focus:outline-none focus:ring focus:ring-paleta-secundario">
                 <option value="">Todo</option>
                 <option value="1">Hard Skills</option>
                 <option value="2">Soft Skills</option>
@@ -72,7 +72,7 @@
             @if($search || $this->tipo != "Todos")
             <button
                 wire:click="limpiar"
-                class="text-white w-1/2 bg-paleta-cuaternario border-0 ml-2 py-2 px-6 focus:outline-none hover:bg-paleta-secundario rounded-lg text-lg">
+                class="text-paleta-cuaternario w-1/2 bg-paleta-secundario border-0 ml-2 py-2 px-6 focus:outline-none hover:bg-paleta-secundario rounded-lg text-lg">
                 Limpiar
 
             </button>
@@ -84,7 +84,7 @@
         <div class=" md:block  w-1/3 xl:w-1/3 md:w-1/2 p-4" >
             <button
                 wire:click="showModal"
-                class="text-white w-full bg-paleta-cuaternario border-0 py-2 pr-6 focus:outline-none hover:bg-paleta-secundario rounded-lg text-lg">
+                class="text-paleta-cuaternario w-full bg-paleta-secundario border-0 py-2 pr-6 focus:outline-none hover:bg-paleta-cuaternario rounded-lg text-lg">
                 Un resultado cercano a la busqueda encontrado
             </button>
         </div>
@@ -95,12 +95,12 @@
         @if($products->count())
             @foreach($products as $product)
                 <div wire:click="addProduct({{ $product->id }})" class="xl:w-1/3 md:w-1/2 p-4">
-                    <div class="border border-paleta-secundario bg-paleta-terciario p-6 rounded-lg cursor-pointer transform hover:scale-105 transition duration-300 erase-in-out">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full text-paleta-primario mb-4">
+                    <div class="border border-paleta-secundario bg-paleta-primario  p-6 rounded-lg cursor-pointer transform hover:scale-105 transition duration-300 erase-in-out">
+                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full text-paleta-secundario mb-4">
                             <i class="{{ $product->icon }} fa-2x"></i>
                         </div>
-                        <h2 class="text-lg text-paleta-quinario font-medium title-font mb-2">{!! $product->name !!}</h2>
-                        <p class="leading-relaxed text-paleta-quinario">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
+                        <h2 class="text-lg text-paleta-secundario font-medium title-font mb-2">{!! $product->name !!}</h2>
+                        <p class="leading-relaxed text-paleta-secundario">Clickee si desea filtrar profesionales que dominen este skill</p>
                     </div>
                 </div>
             @endforeach
@@ -111,7 +111,6 @@
             </div>
         @endif
     </div>
-    <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
 
     <x-dialog-modal wire:model="modal">
         <x-slot name="title">
