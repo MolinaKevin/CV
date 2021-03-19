@@ -1,0 +1,59 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: cv
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: cv
+    container_name: cv-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - cv
+
+  db:
+    image: mysql:8.0
+    container_name: cv-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: cv
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+      MYSQL_USER: kevin
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - cv
+
+  adminer:
+    image: adminer
+    container_name: cv-adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    links:
+      - db:db
+    networks:
+      - cv
+
+  nginx:
+    image: nginx:1.19-alpine
+    container_name: cv-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks:
+      - cv
+networks:
+  cv:
+    driver: bridge

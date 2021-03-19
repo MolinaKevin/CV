@@ -1,59 +1,24 @@
-version: "3.7"
+version: '3.8'
+
 services:
-  app:
-    build:
-      args:
-        user: cv
-        uid: 1000
-      context: ./
-      dockerfile: Dockerfile
-    image: cv
-    container_name: cv-app
-    restart: unless-stopped
-    working_dir: /var/www/
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email molinakevinalejandro@gmail.com --agree-tos --no-eff-email -d molinakev.in
     volumes:
-      - ./:/var/www
-    networks:
-      - cv
-
-  db:
-    image: mysql:8.0
-    container_name: cv-db
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: cv
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_PASSWORD: password
-      MYSQL_USER: kevin
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    volumes:
-      - ./docker/mysql:/docker-entrypoint-initdb.d
-    networks:
-      - cv
-
-  adminer:
-    image: adminer
-    container_name: cv-adminer
-    restart: unless-stopped
-    ports:
-      - 8080:8080
-    links:
-      - db:db
-    networks:
-      - cv
+      - ./docker/certbot/conf:/etc/letsencrypt
+      - ./docker/certbot/logs:/var/log/letsencrypt
+      - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
 
   nginx:
-    image: nginx:1.19-alpine
-    container_name: cv-nginx
+    image: nginx
     restart: unless-stopped
     ports:
-      - 8000:80
+      - 80:80
+      - 443:443
     volumes:
-      - ./:/var/www
+      - /home/cracks/Webs/test:/var/www/public:ro
       - ./docker/nginx:/etc/nginx/conf.d
-    networks:
-      - cv
-networks:
-  cv:
-    driver: bridge
+      - ./docker/dhparam:/etc/nginx/dhparam
+      - ./docker/certbot/conf:/etc/nginx/ssl
+      - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
+
