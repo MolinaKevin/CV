@@ -10,14 +10,14 @@ services:
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
 
   nginx:
-    image: nginx
+    image: mbarthelemy/nginx-geoip
     restart: unless-stopped
     ports:
       - 80:80
       - 443:443
     volumes:
       - ./docker/test:/var/www/public:ro
-      - ./docker/nginx:/etc/nginx/conf.d
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./docker/dhparam:/etc/nginx/dhparam
       - ./docker/certbot/conf:/etc/nginx/ssl
