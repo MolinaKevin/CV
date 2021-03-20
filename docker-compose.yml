@@ -10,7 +10,7 @@ services:
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
 
   nginx:
-    image: mbarthelemy/nginx-geoip
+    image: nginx
     restart: unless-stopped
     ports:
       - 80:80
