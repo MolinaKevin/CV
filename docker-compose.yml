@@ -16,8 +16,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /home/cracks/Webs/test:/var/www/public:ro
-      - ./docker/nginx:/etc/nginx/conf.d
+      - ./docker/test:/var/www/public:ro
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
       - ./docker/dhparam:/etc/nginx/dhparam
       - ./docker/certbot/conf:/etc/nginx/ssl
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
