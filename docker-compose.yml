@@ -3,7 +3,7 @@ version: '3.8'
 services:
   certbot:
     image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email molinakevinalejandro@gmail.com --agree-tos --no-eff-email -d molinakev.in
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email molinakevinalejandro@gmail.com --agree-tos --no-eff-email -d molinakev.in -d www.molinakev.in -d es.molinakev.in -d en.molinakev.in -d de.molinakev.in
     volumes:
       - ./docker/certbot/conf:/etc/letsencrypt
       - ./docker/certbot/logs:/var/log/letsencrypt
@@ -17,8 +17,7 @@ services:
       - 443:443
     volumes:
       - ./docker/test:/var/www/public:ro
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx:/etc/nginx/conf.d
       - ./docker/dhparam:/etc/nginx/dhparam
       - ./docker/certbot/conf:/etc/nginx/ssl
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
-
