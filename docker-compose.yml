@@ -59,12 +59,13 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./docker/test:/var/www/public:ro
+      - ./:/var/www/public:ro
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./docker/dhparam:/etc/nginx/dhparam
       - ./docker/certbot/conf:/etc/nginx/ssl
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
+
 
 
 networks:
