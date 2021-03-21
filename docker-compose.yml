@@ -4,8 +4,8 @@ services:
   app:
     build:
       args:
-        user: cv
-        uid: 1000
+        user: www-data
+        uid: 33
       context: ./
       dockerfile: Dockerfile
     image: cv
