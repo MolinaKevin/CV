@@ -68,8 +68,6 @@ services:
     networks:
       - cv
 
-
-
 networks:
   cv:
     driver: bridge
