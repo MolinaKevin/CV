@@ -65,6 +65,8 @@ services:
       - ./docker/dhparam:/etc/nginx/dhparam
       - ./docker/certbot/conf:/etc/nginx/ssl
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
+    networks:
+      - cv
 
 
 
