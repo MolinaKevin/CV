@@ -1,6 +1,49 @@
 version: '3.8'
 
 services:
+  app:
+    build:
+      args:
+        user: cv
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: cv
+    container_name: cv-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - cv
+
+  db:
+    image: mysql:8.0
+    container_name: cv-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: cv
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+      MYSQL_USER: kevin
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - cv
+
+  adminer:
+    image: adminer
+    container_name: cv-adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    links:
+      - db:db
+    networks:
+      - cv
+
   certbot:
     image: certbot/certbot:latest
     command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email molinakevinalejandro@gmail.com --agree-tos --no-eff-email -d molinakev.in -d www.molinakev.in -d es.molinakev.in -d en.molinakev.in -d de.molinakev.in
@@ -22,3 +65,8 @@ services:
       - ./docker/dhparam:/etc/nginx/dhparam
       - ./docker/certbot/conf:/etc/nginx/ssl
       - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
+
+
+networks:
+  cv:
+    driver: bridge
