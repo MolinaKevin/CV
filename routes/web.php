@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::domain('es.molinakev.in')->group(function () {
+    dd('aa');
 
+});
 
 Route::get('/',Index::class)->name('index');
 
