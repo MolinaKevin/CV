@@ -21,8 +21,11 @@ Route::domain('es.molinakev.in')->group(function () {
     });
 
 });
+Route::get('/',function() {
+    dd(substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2));
+})->name('index');
 
-Route::get('/',Index::class)->name('index');
+//Route::get('/',Index::class)->name('index');
 
 Route::get('/skills',Curriculum::class)->name('skills');
 
