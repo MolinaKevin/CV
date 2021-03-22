@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::domain('es.molinakev.in')->group(function () {
-    dd('aa');
+    Route::get('/', function () {
+        dd('aa');
+    });
 
 });
 
