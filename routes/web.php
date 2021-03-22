@@ -22,7 +22,7 @@ Route::domain('es.molinakev.in')->group(function () {
 
 });
 Route::get('/',function() {
-    dd($_SERVER);
+    dd($_SERVER,$_REQUEST,$_SESSION);
 })->name('index');
 
 //Route::get('/',Index::class)->name('index');
