@@ -4,6 +4,8 @@ use App\Http\Livewire\{
     Curriculum, Cart, Contact, Timeline, Index
 };
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ Route::domain('es.molinakev.in')->group(function () {
 
 });
 Route::get('/',function() {
-    dd($_SESSION);
+    dd(App::currentLocale);
 })->name('index');
 
 //Route::get('/',Index::class)->name('index');
