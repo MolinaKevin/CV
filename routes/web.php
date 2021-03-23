@@ -24,7 +24,7 @@ Route::domain('es.molinakev.in')->group(function () {
 
 });
 Route::get('/',function() {
-    dd(App::currentLocale);
+    dd(App::currentLocale());
 })->name('index');
 
 //Route::get('/',Index::class)->name('index');
