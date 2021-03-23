@@ -23,11 +23,11 @@ Route::domain('es.molinakev.in')->group(function () {
     });
 
 });
-Route::get('/',function() {
-    dd(App::currentLocale());
-})->name('index');
+//Route::get('/',function() {
 
-//Route::get('/',Index::class)->name('index');
+//})->name('index');
+
+Route::get('/',Index::class)->name('index');
 
 Route::get('/skills',Curriculum::class)->name('skills');
 
