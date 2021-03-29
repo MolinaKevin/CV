@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\App;
 |
 */
 Route::domain('es.molinakev.in')->group(function () {
-    Route::get('/', function () {
-        dd('aa');
+    Route::middleware(['locale'])->get('/', function () {
+        dd(App::getLocale());
     });
 
 });

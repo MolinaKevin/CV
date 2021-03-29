@@ -1,24 +1,24 @@
-2021-03-19 23:19:13,100:DEBUG:certbot._internal.main:certbot version: 1.13.0
-2021-03-19 23:19:13,101:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
-2021-03-19 23:19:13,101:DEBUG:certbot._internal.main:Arguments: ['--webroot-path=/usr/share/nginx/html/letsencrypt', '--email', 'molinakevinalejandro@gmail.com', '--agree-tos', '--no-eff-email', '-d', 'molinakev.in']
-2021-03-19 23:19:13,101:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
-2021-03-19 23:19:13,113:DEBUG:certbot._internal.log:Root logging level set at 20
-2021-03-19 23:19:13,114:INFO:certbot._internal.log:Saving debug log to /var/log/letsencrypt/letsencrypt.log
-2021-03-19 23:19:13,114:DEBUG:certbot._internal.plugins.selection:Requested authenticator None and installer None
-2021-03-19 23:19:13,120:DEBUG:certbot._internal.plugins.selection:Multiple candidate plugins: * standalone
+2021-03-19 23:30:09,063:DEBUG:certbot._internal.main:certbot version: 1.13.0
+2021-03-19 23:30:09,063:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2021-03-19 23:30:09,063:DEBUG:certbot._internal.main:Arguments: ['--webroot-path=/usr/share/nginx/html/letsencrypt', '--email', 'molinakevinalejandro@gmail.com', '--agree-tos', '--no-eff-email', '-d', 'molinakev.in']
+2021-03-19 23:30:09,063:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2021-03-19 23:30:09,077:DEBUG:certbot._internal.log:Root logging level set at 20
+2021-03-19 23:30:09,077:INFO:certbot._internal.log:Saving debug log to /var/log/letsencrypt/letsencrypt.log
+2021-03-19 23:30:09,078:DEBUG:certbot._internal.plugins.selection:Requested authenticator None and installer None
+2021-03-19 23:30:09,084:DEBUG:certbot._internal.plugins.selection:Multiple candidate plugins: * standalone
 Description: Spin up a temporary webserver
 Interfaces: IAuthenticator, IPlugin
 Entry point: standalone = certbot._internal.plugins.standalone:Authenticator
-Initialized: <certbot._internal.plugins.standalone.Authenticator object at 0x7f7f4d87f640>
+Initialized: <certbot._internal.plugins.standalone.Authenticator object at 0x7fa5f19e9640>
 Prep: True
 
 * webroot
 Description: Place files in webroot directory
 Interfaces: IAuthenticator, IPlugin
 Entry point: webroot = certbot._internal.plugins.webroot:Authenticator
-Initialized: <certbot._internal.plugins.webroot.Authenticator object at 0x7f7f4d887160>
+Initialized: <certbot._internal.plugins.webroot.Authenticator object at 0x7fa5f19f2070>
 Prep: True
-2021-03-19 23:19:13,121:DEBUG:certbot._internal.log:Exiting abnormally:
+2021-03-19 23:30:09,085:DEBUG:certbot._internal.log:Exiting abnormally:
 Traceback (most recent call last):
   File "/usr/local/bin/certbot", line 11, in <module>
     load_entry_point('certbot', 'console_scripts', 'certbot')()
@@ -43,5 +43,5 @@ Traceback (most recent call last):
   File "/opt/certbot/src/certbot/certbot/display/util.py", line 97, in input_with_timeout
     raise EOFError
 EOFError
-2021-03-19 23:19:13,121:ERROR:certbot._internal.log:An unexpected error occurred:
-2021-03-19 23:19:13,122:ERROR:certbot._internal.log:EOFError
+2021-03-19 23:30:09,086:ERROR:certbot._internal.log:An unexpected error occurred:
+2021-03-19 23:30:09,086:ERROR:certbot._internal.log:EOFError
