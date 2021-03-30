@@ -17,16 +17,16 @@ use Illuminate\Support\Facades\App;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::domain('es.molinakev.in')->group(function () {
-    Route::middleware(['locale:es'])->get('/', Index::class);
+Route::middleware(['locale:es'])->domain('es.molinakev.in')->group(function () {
+    Route::get('/', Index::class);
 });
 
-Route::domain('en.molinakev.in')->group(function () {
-    Route::middleware(['locale:en'])->get('/', Index::class);
+Route::middleware(['locale:en'])->domain('en.molinakev.in')->group(function () {
+    Route::get('/', Index::class);
 });
 
-Route::domain('de.molinakev.in')->group(function () {
-    Route::middleware(['locale:de'])->get('/', Index::class);
+Route::middleware(['locale:de'])->domain('de.molinakev.in')->group(function () {
+    Route::get('/', Index::class);
 });
 
 Route::middleware(['locale'])->get('/',Index::class)->name('index');
