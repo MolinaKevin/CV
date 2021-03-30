@@ -1,6 +1,6 @@
 <div>
     <div class="container px-5 py-24 mx-auto">
-        <h1>{{ \App::getLocale() }}</h1>
+        <h1> - {{ \App::getLocale() }}</h1>
         <div class="-my-8 divide-y-2 divide-paleta-secundario">
             @foreach($steps as $step)
                 <div class="py-8 flex flex-wrap md:flex-nowrap js-show-on-scroll">
