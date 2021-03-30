@@ -10,6 +10,9 @@ use App\Models\Screenshot;
 class Box extends Model
 {
     use HasFactory;
+    use HasTranslations;
+
+    public $translatable = ['name','content'];
 
     protected  $fillable = ['name','icon','content','type','step_id'];
 
