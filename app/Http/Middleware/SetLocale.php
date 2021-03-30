@@ -21,6 +21,8 @@ class SetLocale
     public function handle(Request $request, Closure $next, $lang = null)
     {
         if ($lang == "es" || $lang == "de" || $lang == "en") {
+            Session::put('locale', $lang);
+
             $locale = $lang;
         } elseif (Session::has('locale')){
             $locale = Session::get('locale', Config::get('app.locale'));
