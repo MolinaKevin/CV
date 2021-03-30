@@ -8,7 +8,7 @@
                     wire:click="$emit('changeBox',{{ $box->id }})"
                 >
                     <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
-                    <span class="uppercase">{!! $box->name !!}</span>
+                    <span class="uppercase">{!! $box->getTranslation('name', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</span>
                 </a>
             @endforeach
 
