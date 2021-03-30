@@ -20,21 +20,18 @@ use Illuminate\Support\Facades\App;
 Route::domain('es.molinakev.in')->group(function () {
     Route::middleware(['locale'])->get('/', function () {
         App::setLocale('es');
-        dd(App::getLocale());
     });
 });
 
 Route::domain('en.molinakev.in')->group(function () {
     Route::middleware(['locale'])->get('/', function () {
         App::setLocale('en');
-        dd(App::getLocale());
     });
 });
 
 Route::domain('de.molinakev.in')->group(function () {
     Route::middleware(['locale'])->get('/', function () {
         App::setLocale('de');
-        dd(App::getLocale());
     });
 });
 
