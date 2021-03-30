@@ -18,9 +18,11 @@ class SetLocale
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $lang)
     {
-        if (Session::has('locale')) {
+        if ($lang == "es" || $lang == "de" || $lang == "en") {
+            $locale = $lang;
+        } elseif (Session::has('locale')){
             $locale = Session::get('locale', Config::get('app.locale'));
         } else {
             $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
@@ -31,7 +33,7 @@ class SetLocale
         }
 
         App::setLocale($locale);
-
+dd(App::getLocale());
         return $next($request);
     }
 }
