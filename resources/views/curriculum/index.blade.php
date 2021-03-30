@@ -3,7 +3,7 @@
 	<!--Main Col-->
 	<div id="profile" class="w-full lg:w-2/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-paleta-primario  mx-2 lg:mx-0">
 
-        <h1>{{  }} - {{ \App::getLocale() }}</h1>
+        <h1> - {{ \App::getLocale() }}</h1>
 
 		<div class="p-4 md:p-12 text-center lg:text-left">
 			<!-- Image for mobile view-->
