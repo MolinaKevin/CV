@@ -33,7 +33,7 @@ class SetLocale
         }
 
         App::setLocale($locale);
-dd(App::getLocale());
+
         return $next($request);
     }
 }
