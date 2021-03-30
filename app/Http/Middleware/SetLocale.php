@@ -18,7 +18,7 @@ class SetLocale
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, $lang)
+    public function handle(Request $request, Closure $next, $lang = null)
     {
         if ($lang == "es" || $lang == "de" || $lang == "en") {
             $locale = $lang;
