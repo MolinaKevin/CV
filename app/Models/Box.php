@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
 use App\Models\Screenshot;
+use Spatie\Translatable\HasTranslations;
 
 class Box extends Model
 {
