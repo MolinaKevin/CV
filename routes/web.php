@@ -19,24 +19,38 @@ use Illuminate\Support\Facades\App;
 */
 Route::domain('es.molinakev.in/')->middleware(['locale:es'])->group(function () {
     Route::get('/', Index::class);
+
+    Route::get('/skills',Curriculum::class);
+
+    Route::get('/cart',Cart::class);
+
+    Route::get('/contact',Contact::class);
+
+    Route::get('/timeline',Timeline::class);
 });
 
 Route::domain('en.molinakev.in')->middleware(['locale:en'])->group(function () {
     Route::get('/', Index::class);
+
+    Route::get('/skills',Curriculum::class);
+
+    Route::get('/cart',Cart::class);
+
+    Route::get('/contact',Contact::class);
+
+    Route::get('/timeline',Timeline::class);
 });
 
 Route::domain('de.molinakev.in')->middleware(['locale:de'])->group(function () {
     Route::get('/', Index::class);
 
-Route::get('/skills',Curriculum::class)->name('skills');
+    Route::get('/skills',Curriculum::class);
 
-Route::get('/cart',Cart::class)->name('cart');
+    Route::get('/cart',Cart::class);
 
-Route::get('/contact',Contact::class)->name('contact');
+    Route::get('/contact',Contact::class);
 
-Route::get('/timeline',Timeline::class)->name('timeline');
-
-
+    Route::get('/timeline',Timeline::class);
 });
 
 Route::middleware(['locale'])->get('/',Index::class)->name('index');
