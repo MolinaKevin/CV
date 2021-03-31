@@ -50,8 +50,8 @@
                                     <div class="flex relative h-60">
                                       <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="{{ asset('storage/images/' . $image->path) }}">
                                       <div class="px-8 py-10 relative z-10 w-full border-4 border-paleta-secundario bg-paleta-primario opacity-0 hover:opacity-90">
-                                        <h2 class="tracking-widest text-sm title-font font-medium text-paleta-quinario mb-1">{{ $image->subtitle }}</h2>
-                                        <h1 class="title-font text-lg font-medium text-paleta-secundario mb-3">{{ $image->title }}</h1>
+                                        <h2 class="tracking-widest text-sm title-font font-medium text-paleta-quinario mb-1">{{ $image->getTranslation('subtitle', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}</h2>
+                                        <h1 class="title-font text-lg font-medium text-paleta-secundario mb-3">{{ $image->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}</h1>
                                         <p class="leading-relaxed text-paleta-secundario">{!! $image->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</p>
                                       </div>
                                     </div>
