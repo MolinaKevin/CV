@@ -14,7 +14,7 @@
             {{ __('Busqueda Personalizada') }}
         </x-nav-link>
         <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('contact')">
-            {{ __('Contact') }}
+            {{ __('Contacto') }}
         </x-nav-link>
         <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
             {{ __('Timeline') }}
