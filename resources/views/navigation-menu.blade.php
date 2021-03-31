@@ -17,7 +17,7 @@
             {{ __('Contacto') }}
         </x-nav-link>
         <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
-            {{ __('Timeline') }}
+            {{ __('Linea de Tiempo') }}
         </x-nav-link>
     </nav>
     <!-- Hamburger -->
