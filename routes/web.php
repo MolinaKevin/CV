@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\App;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::domain('es.molinakev.in')->middleware(['locale:es'])->group(function () {
+Route::domain('es.molinakev.in/')->middleware(['locale:es'])->group(function () {
     Route::get('/', Index::class);
 });
 
@@ -27,6 +27,16 @@ Route::domain('en.molinakev.in')->middleware(['locale:en'])->group(function () {
 
 Route::domain('de.molinakev.in')->middleware(['locale:de'])->group(function () {
     Route::get('/', Index::class);
+
+Route::get('/skills',Curriculum::class)->name('skills');
+
+Route::get('/cart',Cart::class)->name('cart');
+
+Route::get('/contact',Contact::class)->name('contact');
+
+Route::get('/timeline',Timeline::class)->name('timeline');
+
+
 });
 
 Route::middleware(['locale'])->get('/',Index::class)->name('index');
