@@ -72,7 +72,7 @@
             var i = this.loopNum % this.toRotate.length;
             var j = (i == 0) ? 0 : i - 1;
             var lastDev = this.toRotate[j].developer;
-            var lang = "es";
+            var lang = "{{ \Session::get('locale') ? \Session::get('locale') : \App::getLocale() }}";
             var addTxt = this.toRotate[i].agregar[lang];
             var fullTxt = this.toRotate[i].name;
             var inicio = 0;
