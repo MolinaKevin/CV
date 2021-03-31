@@ -36,7 +36,7 @@
                       <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q={!! $selected->content !!}&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
                       <div class="bg-white relative flex flex-wrap py-8 rounded shadow-md">
                         <div class="px-20">
-                          <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">LOCACION</h2>
+                          <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
                           <p class="mt-1">{!! $selected->content !!}</p>
                         </div>
                       </div>
