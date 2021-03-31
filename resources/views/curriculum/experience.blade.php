@@ -37,7 +37,7 @@
                       <div class="bg-white relative flex flex-wrap py-8 rounded shadow-md">
                         <div class="px-20">
                           <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
-                          <p class="mt-1">{!! $selected->content !!}</p>
+                          <p class="mt-1">{!! $selected->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</p>
                         </div>
                       </div>
                     </div>
