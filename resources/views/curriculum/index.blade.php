@@ -21,7 +21,7 @@
 
 			<div class="pt-12 pb-8">
 				<button class="bg-paleta-secundario hover:bg-paleta-terciario text-paleta-quinario font-bold py-2 px-4 rounded-full">
-				    Enviame un mail
+                    {{ __('Enviame un mail') }}
 				</button>
 			</div>
 
