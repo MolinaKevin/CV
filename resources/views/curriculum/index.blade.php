@@ -72,7 +72,7 @@
             var i = this.loopNum % this.toRotate.length;
             var j = (i == 0) ? 0 : i - 1;
             var lastDev = this.toRotate[j].developer;
-            var addTxt = this.toRotate[i].agregar.es;
+            var addTxt = this.toRotate[i].agregar.[lang];
             var fullTxt = this.toRotate[i].name;
             var inicio = 0;
             var temp = false;
@@ -116,6 +116,7 @@
             //var toRotate = elements[i].getAttribute('data-rotate');
             var period = elements[i].getAttribute('data-period');
             var toRotate = {!! $techs !!};
+            var lang = "es";
             console.log(toRotate);
             if (toRotate) {
                     new TxtRotate(elements[i], toRotate, period);
