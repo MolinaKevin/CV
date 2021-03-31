@@ -116,6 +116,7 @@
             //var toRotate = elements[i].getAttribute('data-rotate');
             var period = elements[i].getAttribute('data-period');
             var toRotate = {!! $techs !!};
+            console.log(toRotate);
             if (toRotate) {
                     new TxtRotate(elements[i], toRotate, period);
             }
