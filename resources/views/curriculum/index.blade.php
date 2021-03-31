@@ -72,7 +72,7 @@
             var i = this.loopNum % this.toRotate.length;
             var j = (i == 0) ? 0 : i - 1;
             var lastDev = this.toRotate[j].developer;
-            var addTxt = this.toRotate[i].agregar;
+            var addTxt = this.toRotate[i].agregar.es;
             var fullTxt = this.toRotate[i].name;
             var inicio = 0;
             var temp = false;
