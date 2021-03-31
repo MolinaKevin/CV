@@ -14,7 +14,7 @@ class Step extends Model
     use HasFactory;
     use HasTranslations;
 
-    protected $translatable = ['description'];
+    protected $translatable = ['description','place','title'];
 
     protected $fillable = ['init','end','title','description','place','key'];
 
