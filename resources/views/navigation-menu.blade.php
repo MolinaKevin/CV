@@ -41,10 +41,10 @@
                 {{ __('Busqueda Personalizada') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('contact') }}" :active="request()->routeIs('contact')">
-                {{ __('Contact') }}
+                {{ __('Contacto') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
-                {{ __('Timeline') }}
+                {{ __('Linea de Tiempo') }}
             </x-jet-responsive-nav-link>
         </div>
 
