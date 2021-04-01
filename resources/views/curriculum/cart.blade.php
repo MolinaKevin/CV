@@ -39,8 +39,8 @@
         </div>
     @else
         <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-paleta-secundario">Que tecnologias, skills?</h1>
-          <p class="lg:w-1/2 w-full leading-relaxed text-paleta-secundario">Si no esta seguro de contactarme, dejeme ayudarle a buscar profesionales.</p>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-paleta-secundario">{{ __('Buscador de profesionales') }}</h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-paleta-secundario">{{ __('Para demostrar mis habilidades, diseñé este filtro de profesionales. Puede hacer clic en cualquier habilidad o skill de la lista para que se le muestren diferentes profesionales que se puedan adaptar a su busqueda.') }}</p>
         </div>
     @endif
     <div class="flex flex-wrap -m-4 mb-3">
