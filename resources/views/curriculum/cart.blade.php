@@ -27,7 +27,7 @@
                             wire:click="removeProducts"
 >
                             <i class="fas fa-times fa-2x w-6 h-6 flex-shrink-0 mr-4"></i>
-                            <span class="title-font font-medium">Limpiar</span>
+                            <span class="title-font font-medium">{{ __('Limpiar') }}</span>
                             <button
                                 class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-secundario hover:bg-paleta-secundario hover:text-paleta-quinario ml-auto mr-0 "
                                                             >
@@ -55,7 +55,7 @@
                 <input
                     type="text"
                     class="pl-10 pr-4 w-full py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-paleta-secundario dark:border-paleta-secundario rounded-lg focus:border-paleta-secundario dark:focus:border-paleta-secundario focus:outline-none focus:ring focus:ring-paleta-secundario"
-                    placeholder="Search"
+                    placeholder="{{ __('Buscar') }}"
                     wire:model="search"
                 />
 
@@ -65,7 +65,7 @@
             <select
                 wire:model="type"
                 class="{{ ($search || $type != '0' ) ? 'w-full' : 'w-1/2 mr-2' }} rounded-lg border-paleta-secundario focus:border-paleta-secundario focus:outline-none focus:ring focus:ring-paleta-secundario">
-                <option value="">Todo</option>
+                <option value="">{{ __('Todo') }}</option>
                 <option value="1">Hard Skills</option>
                 <option value="2">Soft Skills</option>
             </select>
@@ -73,7 +73,7 @@
             <button
                 wire:click="limpiar"
                 class="text-paleta-cuaternario w-1/2 bg-paleta-secundario border-0 ml-2 py-2 px-6 focus:outline-none hover:bg-paleta-secundario rounded-lg text-lg">
-                Limpiar
+                {{ __('Limpiar') }}
 
             </button>
         @endif
@@ -85,7 +85,7 @@
             <button
                 wire:click="showModal"
                 class="text-paleta-cuaternario w-full bg-paleta-secundario border-0 py-2 pr-6 focus:outline-none hover:bg-paleta-cuaternario rounded-lg text-lg">
-                Un resultado cercano a la busqueda encontrado
+                {{ __('Un resultado cercano a la búsqueda encontrado') }}
             </button>
         </div>
         @endif
@@ -106,8 +106,8 @@
             @endforeach
         @else
             <div class="w-full p-4 text-paleta-secundario">
-                No hay resultados disponibles para la busqueda: <br />
-                {{ $search ? "Cadena buscada: \"$search\"" : ''}} {{ $search ? '-' : '' }} Tipo "{{ $this->tipo }}"
+                {{ __('No hay resultados disponibles para la busqueda:') }} <br />
+                {{ $search ? __('Cadena buscada:') " \"$search\"" : ''}} {{ $search ? '-' : '' }} Tipo "{{ $this->tipo }}"
             </div>
         @endif
     </div>
