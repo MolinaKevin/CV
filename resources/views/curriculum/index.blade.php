@@ -80,7 +80,13 @@
             if (lastDev != dev) {
                 inicio = 14;
             }
-            fullTxt = addTxt + " " + fullTxt;
+            if ($lang == 'es') {
+                fullTxt = addTxt + " " + fullTxt;
+            } else if ($lang == 'de') {
+                fullTxt =  fullTxt + "-" + addTxt;
+            } else {
+                fullTxt = addTxt + " " + fullTxt;
+            }
             var dev = this.toRotate[i].developer;
 
           if (this.isDeleting) {
