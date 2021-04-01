@@ -22,18 +22,18 @@
 
                 @endforeach
                 <div class="p-2 sm:w-1/4 w-1/2">
-                        <div
-                            class="bg-paleta-secundario text-paleta-cuaternario rounded flex p-4 items-center cursor-pointer hover:bg-paleta-cuaternario hover:text-paleta-secundario"
-                            wire:click="removeProducts"
+                    <div
+                        class="bg-paleta-secundario text-paleta-cuaternario rounded flex p-4 items-center cursor-pointer hover:bg-paleta-cuaternario hover:text-paleta-secundario"
+                        wire:click="removeProducts"
 >
-                            <i class="fas fa-times fa-2x w-6 h-6 flex-shrink-0 mr-4"></i>
-                            <span class="title-font font-medium">{{ __('Limpiar') }}</span>
-                            <button
-                                class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-secundario hover:bg-paleta-secundario hover:text-paleta-quinario ml-auto mr-0 "
-                                                            >
-                            </button>
-                        </div>
+                        <i class="fas fa-times fa-2x w-6 h-6 flex-shrink-0 mr-4"></i>
+                        <span class="title-font font-medium">{{ __('Limpiar') }}</span>
+                        <button
+                            class="rounded-full w-6 h-6 p-0 border-0 inline-flex items-center justify-center text-paleta-secundario hover:bg-paleta-secundario hover:text-paleta-quinario ml-auto mr-0 "
+                                                        >
+                        </button>
                     </div>
+                </div>
 
             </div>
         </div>
@@ -69,7 +69,7 @@
                 <option value="1">Hard Skills</option>
                 <option value="2">Soft Skills</option>
             </select>
-            @if($search || $this->tipo != "Todos")
+            @if($search || $this->tipo != __('Todos'))
             <button
                 wire:click="limpiar"
                 class="text-paleta-cuaternario w-1/2 bg-paleta-secundario border-0 ml-2 py-2 px-6 focus:outline-none hover:bg-paleta-secundario rounded-lg text-lg">
