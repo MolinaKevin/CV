@@ -2,8 +2,8 @@
     @if($selection)
         <div class="flex flex-wrap flex-row mb-20">
             <div class="w-1/3 flex-col items-end text-center m-auto">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-paleta-secundario">Que tecnologias, skills?</h1>
-                <p class="w-full leading-relaxed text-paleta-secundario">Si no esta seguro de contactarme, dejeme ayudarle a buscar profesionales.</p>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-paleta-secundario">{{ __('Buscador de profesionales') }}</h1>
+                <p class="w-full leading-relaxed text-paleta-secundario">{{ __('Para demostrar mis habilidades, diseñé este filtro de profesionales. Puede hacer clic en cualquier habilidad o skill de la lista para que se le muestren diferentes profesionales que se puedan adaptar a su busqueda.') }}</p>
             </div>
             <div class="flex flex-wrap lg:w-2/3 sm:mb-2 -mx-2 border-l border-paleta-secundario ">
                 @foreach($selection as $select)
