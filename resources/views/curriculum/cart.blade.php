@@ -107,7 +107,7 @@
         @else
             <div class="w-full p-4 text-paleta-secundario">
                 {{ __('No hay resultados disponibles para la busqueda:') }} <br />
-                {{ $search ? __('Cadena buscada:') . " \"$search\"" : ''}} {{ $search ? '-' : '' }} Tipo "{{ $this->tipo }}"
+                {{ $search ? __('Cadena buscada:') . " \"$search\"" : ''}} {{ $search ? '-' : '' }} {{ __('Tipo') }} "{{ $this->tipo }}"
             </div>
         @endif
     </div>
