@@ -100,7 +100,7 @@
                             <i class="{{ $product->icon }} fa-2x"></i>
                         </div>
                         <h2 class="text-lg text-paleta-secundario font-medium title-font mb-2">{!! $product->name !!}</h2>
-                        <p class="leading-relaxed text-paleta-secundario">Clickee si desea filtrar profesionales que dominen este skill</p>
+                        <p class="leading-relaxed text-paleta-secundario">{{ __('Clickee si desea filtrar profesionales que dominan este skill') }}</p>
                     </div>
                 </div>
             @endforeach
