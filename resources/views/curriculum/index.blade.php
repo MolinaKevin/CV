@@ -80,9 +80,9 @@
             if (lastDev != dev) {
                 inicio = 14;
             }
-            if ($lang == 'es') {
+            if (lang == 'es') {
                 fullTxt = addTxt + " " + fullTxt;
-            } else if ($lang == 'de') {
+            } else if (lang == 'de') {
                 fullTxt =  fullTxt + "-" + addTxt;
             } else {
                 fullTxt = addTxt + " " + fullTxt;
