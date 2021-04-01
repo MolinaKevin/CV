@@ -75,6 +75,7 @@
             var lang = "{{ \Session::get('locale') ? \Session::get('locale') : \App::getLocale() }}";
             var addTxt = this.toRotate[i].agregar[lang];
             var fullTxt = this.toRotate[i].name;
+            var antes = this.toRotate[i].antes;
             var inicio = 0;
             var temp = false;
             if (lastDev != dev) {
@@ -82,19 +83,19 @@
             }
             if (lang == 'es') {
                 fullTxt = addTxt + " " + fullTxt;
-            } else if (lang == 'de') {
+            } else if (lang == 'de' && antes == 1) {
                 fullTxt =  fullTxt + "-" + addTxt;
             } else {
                 fullTxt = addTxt + " " + fullTxt;
             }
             var dev = this.toRotate[i].developer;
 
-          if (this.isDeleting) {
+            if (this.isDeleting) {
                 this.txt = fullTxt.substring(0, this.txt.length - 1);
-          } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-          }
-                this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
 
 
