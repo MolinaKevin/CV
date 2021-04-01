@@ -63,7 +63,7 @@ class Cart extends Component
     {
         switch ($this->type) {
             case 0:
-                return "Todos";
+                return __('Todos');
                 break;
             case 1:
                 return "Hard Skills";
@@ -72,7 +72,7 @@ class Cart extends Component
                 return "Soft Skills";
                 break;
             default:
-                return "Todos";
+                return __('Todos');
                 break;
         }
     }
