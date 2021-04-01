@@ -15,8 +15,7 @@
         <script defer src="https://friconix.com/cdn/friconix.js"> </script>
 
         <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/28bc186263.js" crossorigin="anonymous"></script>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
         @livewireStyles
 
         <!-- Scripts -->
