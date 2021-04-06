@@ -75,6 +75,7 @@ services:
     restart: unless-stopped
     ports:
       - "25:25"
+      - "81:80"
       - "110:110"
       - "143:143"
       - "587:587"
