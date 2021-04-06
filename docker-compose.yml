@@ -74,14 +74,14 @@ services:
     image: dirtsimple/poste.io
     restart: unless-stopped
     ports:
-      - "25:25"
-      - "81:80"
-      - "110:110"
-      - "143:143"
-      - "587:587"
-      - "993:993"
-      - "995:995"
-      - "4190:4190"
+      - 25:25
+      - 81:80
+      - 110:110
+      - 143:143
+      - 587:587
+      - 993:993
+      - 995:995
+      - 4190:4190
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./docker/mail-data/:/data
