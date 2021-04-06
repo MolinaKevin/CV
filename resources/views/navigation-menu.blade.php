@@ -20,10 +20,10 @@
             {{ __('Linea de Tiempo') }}
         </x-nav-link>
     </nav>
-    <a href="es.molinakev.in" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 mr-2 md:mt-0">
+    <a href="https://es.molinakev.in" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 mr-2 md:mt-0">
         ES
     </a>
-    <a href="de.molinakev.in" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+    <a href="https://de.molinakev.in" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
         DE
     </a>
     <!-- Hamburger -->
