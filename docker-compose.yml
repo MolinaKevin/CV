@@ -70,6 +70,17 @@ services:
     networks:
       - cv
 
+  poste:
+    image: analogic/poste.io
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - /root/mail-data/:/data
+    environment:
+      HTTPS=ON
+    networks:
+      - cv
+
 networks:
   cv:
     driver: bridge
