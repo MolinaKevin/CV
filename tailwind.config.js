@@ -74,12 +74,14 @@ module.exports = {
             opacity: ['disabled'],
             translate: ['motion-reduce'],
         },
-        animation: ['responsive', 'motion-safe', 'motion-reduce']
+        animation: ['responsive', 'motion-safe', 'motion-reduce'],
+        scrollbar: ['rounded']
     },
 
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
         require('daisyui'),
+        require('tailwind-scrollbar'),
     ],
 };
