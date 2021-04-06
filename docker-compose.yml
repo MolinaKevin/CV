@@ -70,26 +70,6 @@ services:
     networks:
       - cv
 
-  mailserver:
-    image: analogic/poste.io
-    restart: unless-stopped
-    ports:
-      - "25:25"
-      - "110:110"
-      - "143:143"
-      - "587:587"
-      - "993:993"
-      - "995:995"
-      - "4190:4190"
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./docker/mail-data/:/data
-    environment:
-      - HTTPS=ON
-      - VIRTUAL_HOST=mail.molinakev.in
-    networks:
-      - cv
-
 networks:
   cv:
     driver: bridge
