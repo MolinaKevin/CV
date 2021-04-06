@@ -86,7 +86,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./docker/mail-data/:/data
     environment:
-      HTTPS=ON
+      - HTTPS=ON
       - VIRTUAL_HOST=mail.molinakev.in
     networks:
       - cv
