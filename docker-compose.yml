@@ -87,7 +87,8 @@ services:
     environment:
       - HTTPS=ON
     hostname: mail.molinakev.in
-    network_mode: host
+    networks:
+      - cv
 
 networks:
   cv:
