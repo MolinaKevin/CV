@@ -43,7 +43,7 @@
 
         </style>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-paleta-quinario">
         <x-jet-banner />
 
         <div class="min-h-screen bg-paleta-quinario ">
