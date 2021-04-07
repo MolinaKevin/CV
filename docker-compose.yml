@@ -90,6 +90,8 @@ services:
       - HTTPS=ON
       - VIRTUAL_HOST=mail.molinakev.in
     hostname: mail.molinakev.in
+    networks:
+      - cv
 #    network_mode: host
 
 networks:
