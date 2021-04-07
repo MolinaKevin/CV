@@ -63,7 +63,7 @@
 
         <x-slot name="content">
             <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
-<textarea id="message" name="message" class="lg:w-2/3 md:w-1/2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+<textarea id="message" name="message" class="lg:w-2/3 rounded-lg md:w-1/2 sm:mr-10 p-10 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
 
                 <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
                   <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
