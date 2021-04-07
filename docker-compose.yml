@@ -25,8 +25,8 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: cv
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 6ud6iSbV64miJKa3GjyhcL99V46u
+      MYSQL_PASSWORD: 6ud6iSbV64miJKa3GjyhcL99V46u
       MYSQL_USER: kevin
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
@@ -88,7 +88,7 @@ services:
     environment:
       - HTTPS=ON
     hostname: mail.molinakev.in
-    network_mode: "host"
+    network_mode: host
 
 networks:
   cv:
