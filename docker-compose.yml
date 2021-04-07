@@ -70,24 +70,24 @@ services:
     networks:
       - cv
 
-  mailserver:
-    image: dirtsimple/poste.io
-    restart: unless-stopped
-    ports:
-      - 25:25
+        #  mailserver:
+        #    image: dirtsimple/poste.io
+        #    restart: unless-stopped
+        #    ports:
+        #      - 25:25
         #      - 80:80
-      - 110:110
-      - 143:143
-      - 587:587
-      - 993:993
-      - 995:995
-      - 4190:4190
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./docker/mail-data/:/data
-    environment:
-      - HTTPS=ON
-    hostname: mail.molinakev.in
+        #      - 110:110
+        #      - 143:143
+        #      - 587:587
+        #      - 993:993
+        #      - 995:995
+        #      - 4190:4190
+        #    volumes:
+        #      - /etc/localtime:/etc/localtime:ro
+        #      - ./docker/mail-data/:/data
+        #    environment:
+        #      - HTTPS=ON
+        #    hostname: mail.molinakev.in
       #    network_mode: host
 
 networks:
