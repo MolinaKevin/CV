@@ -20,7 +20,7 @@
 			<p class="mt-4 text-sm text-paleta-secundario max-h-40 overflow-y-auto">{{ __('Si estás acá probablemente estés pensando en contratarme y por ende me veo en la necesidad de advertirte un par de cuestiones. Me interesa dar todo. Si estás buscando una mano de obra robotizada y sin criterio no soy la persona indicada. Si estás buscando alguien que se sepa todos los conceptos teóricos de memoria tampoco soy ese tipo de profesional. Yo soy una persona comprometida, la cual se ha embarcado en diferentes travesías y que se esfuerza por encontrar las mejores soluciones a los problemas que se le presenten, tanto en la profesión como en el resto de la vida. Soy apasionado y leal, me gusta dar todo lo que tengo. Me gusta aprender y no le tengo miedo a ninguna tecnología. A lo largo de mi carrera me he topado con problemas tan heterogéneos que conozco muchos caminos y posibles soluciones, también por ello me gusta compartir mi experiencia y no me gusta que las cosas se resuelvan de sin un objetivo o fin claro. Si solo se me va a imponer trabajo no me contactes por favor, no pierdas tu tiempo, no trabajo bien desmotivado y el hecho de no ser escuchado es lo que más me desmotiva. Y si no estás seguro, no dudes en contactarme con las herramientas de acá abajo y podemos charlarlo en persona, soy un tipo afable :).') }}</p>
 
 			<div class="pt-4 pb-8">
-				<button wire:model="showModal" class="bg-paleta-secundario hover:bg-paleta-terciario text-paleta-quinario font-bold py-2 px-4 rounded-full">
+				<button wire:click="showModal" class="bg-paleta-secundario hover:bg-paleta-terciario text-paleta-quinario font-bold py-2 px-4 rounded-full">
                     {{ __('Enviame un mail') }}
 				</button>
 			</div>

@@ -89,6 +89,7 @@ services:
     environment:
       - HTTPS=ON
       - VIRTUAL_HOST=mail.molinakev.in
+      - DISABLE_CLAMAV=TRUE
     hostname: mail.molinakev.in
     networks:
       - cv
