@@ -67,15 +67,15 @@
 
                 <div class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
                   <div class="relative mb-4">
-                    <label for="name" class="leading-7 text-sm text-paleta-primario">{{ __('Nombre') }}</label>
+                    <label for="name" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
                     <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                   </div>
                   <div class="relative mb-4">
-                    <label for="email" class="leading-7 text-sm text-paleta-primario">{{ __('Email') }}</label>
+                    <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
                     <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                   </div>
                   <div class="relative mb-4">
-                    <label for="email" class="leading-7 text-sm text-paleta-primario">{{ __('Asunto') }}</label>
+                    <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
                     <input type="text" id="subject" name="subject" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                   </div>
 
