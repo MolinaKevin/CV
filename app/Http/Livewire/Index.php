@@ -7,6 +7,13 @@ use Livewire\Component;
 
 class Index extends Component
 {
+
+    public $modal = false;
+
+    public function showModal() {
+        $this->modal = true;
+    }
+
     public function render()
     {
         return view('curriculum.index',[
