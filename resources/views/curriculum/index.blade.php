@@ -7,7 +7,7 @@
 			<!-- Image for mobile view-->
 			<div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('{{ asset('storage/images/yo.jfif') }}')"></div>
 
-			<h1 class="text-3xl text-paleta-cuaternario font-bold pt-8 lg:pt-0">Kevin Molina</h1>
+			<h1 class="text-3xl text-paleta-secundario font-bold pt-8 lg:pt-0">Kevin Molina</h1>
 			<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-paleta-quinario "></div>
             <p class="pt-4 text-base text-paleta-secundario font-bold flex items-center justify-center lg:justify-start"><svg class="h-4 fill-current text-paleta-secundario pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/></svg>
                 <span
