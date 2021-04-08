@@ -4,7 +4,7 @@
             @foreach($boxes as $box)
 
                 <a
-                    class="px-12 py-3 w-1/2 sm:w-1/{{ $count }} justify-center sm:justify-start border-b-2 title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-cuaternario text-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario hover:border-paleta-cuaternario hover:text-paleta-cuaternario' }} tracking-wider  cursor-pointer"
+                    class="px-12 py-3 w-1/2 sm:w-1/{{ $count - 1 }} justify-center sm:justify-start border-b-2 title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-cuaternario text-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario hover:border-paleta-cuaternario hover:text-paleta-cuaternario' }} tracking-wider  cursor-pointer"
                     wire:click="$emit('changeBox',{{ $box->id }})"
                 >
                     <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
