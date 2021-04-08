@@ -1,6 +1,6 @@
-<section class="text-gray-600 body-font">
+<section class="body-font">
     <div class="container mx-auto flex flex-wrap flex-col">
-        <div class="flex mx-auto flex-wrap mb-2">
+        <div class="w-100 mb-2">
             @foreach($boxes as $box)
 
                 <a
