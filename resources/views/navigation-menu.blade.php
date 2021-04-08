@@ -1,14 +1,19 @@
 <div x-data="{ open: false }" class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a href="{{ route('index') }}" class="flex title-font font-medium items-center text-paleta-secundario umb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-paleta-secundario rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span class="ml-3 text-xl">Kevin Molina</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-paleta-secundario rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <x-nav-link href="{{ route('index') }}" :active="request()->routeIs('index')">
+            Kevin Molina
+        </x-nav-link>
     </a>
     <nav class="hidden sm:inline md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-paleta-secundario flex flex-wrap items-center text-paleta-primario justify-center">
         <!-- Navigation Links -->
         <x-nav-link href="{{ route('index') }}" :active="request()->routeIs('index')">
             {{ __('Inicio') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+            {{ __('Linea de Tiempo') }}
         </x-nav-link>
         <x-nav-link href="{{ route('cart') }}" :active="request()->routeIs('cart')">
             {{ __('Busqueda Personalizada') }}
@@ -16,10 +21,7 @@
         <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('contact')">
             {{ __('Contacto') }}
         </x-nav-link>
-        <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
-            {{ __('Linea de Tiempo') }}
-        </x-nav-link>
-    </nav>
+     </nav>
     <a href="https://es.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 mr-2 md:mt-0">
         ES
     </a>
