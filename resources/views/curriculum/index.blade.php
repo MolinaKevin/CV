@@ -56,7 +56,7 @@
 
 	</div>
 
-    <x-dialog-modal wire:model="modal" maxWidth="lg">
+    <x-dialog-modal wire:model="modal" maxWidth="7xl">
         <x-slot name="title">
             {{ __('Enviame un mail') }}
         </x-slot>
