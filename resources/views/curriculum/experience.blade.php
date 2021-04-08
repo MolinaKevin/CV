@@ -17,7 +17,7 @@
         <div class="flex flex-col text-center w-full pb-2">
             @switch($selected->type)
                 @case(1)
-                    <p class="lg:w-2/3 mx-auto leading-relaxed text-paleta-secundario">{!! $selected->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</p>
+                    <p class="lg:w-5/6 mx-auto leading-relaxed text-paleta-secundario">{!! $selected->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</p>
                     @break
                 @case(2)
                     <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
