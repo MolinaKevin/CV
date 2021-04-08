@@ -29,7 +29,7 @@ module.exports = {
                 paleta: {
                     primario:       '#F5FAFA',
                     secundario:     '#001946',
-                    terciario:      '#001946',
+                    terciario:      '#E3A72F',
                     cuaternario:    '#F55310',
                     quinario:       '#8AB0BF',
                 },
