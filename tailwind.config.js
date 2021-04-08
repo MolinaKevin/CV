@@ -31,7 +31,7 @@ module.exports = {
                     primario:       '#CAAF7A',
                     //primario:       '#000000',
                     //secundario:     '#001946',
-                    secundario:     '#270140',
+                    secundario:     '#001946',
                     //secundario:     '#23A3AE',
                     //terciario:      '#025373',
                     terciario:      '#F5CE35',
