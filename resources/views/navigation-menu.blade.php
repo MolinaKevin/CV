@@ -9,9 +9,6 @@
     </a>
     <nav class="hidden sm:inline md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-paleta-secundario flex flex-wrap items-center text-paleta-primario justify-center">
         <!-- Navigation Links -->
-        <x-nav-link href="{{ route('index') }}" :active="request()->routeIs('index')">
-            {{ __('Inicio') }}
-        </x-nav-link>
         <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
             {{ __('Linea de Tiempo') }}
         </x-nav-link>
