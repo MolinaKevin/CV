@@ -119,7 +119,7 @@
 
         <x-slot name="content">
             <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 overflow-hidden shadow-md rounded-lg">
-                <img class="w-full h-100 object-cover" src="{{ asset('storage/images/yo.jfif') }}" alt="Article">
+                <img class="w-2/3 h-100 object-cover" src="{{ asset('storage/images/yo.jfif') }}" alt="Article">
 
                 <div class="p-6">
                     <div>
