@@ -10,7 +10,7 @@ class Timeline extends Component
 
     public $more = false;
 
-    public $active = 1;
+    public $active = 8;
 
     protected $listeners = [
         'timelineSelect' => 'showMore'
