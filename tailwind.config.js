@@ -30,7 +30,7 @@ module.exports = {
                     primario:       '#F5FAFA',
                     secundario:     '#001946',
                     terciario:      '#E3A72F',
-                    cuaternario:    '#F55310',
+                    cuaternario:    '#025373',
                     quinario:       '#8AB0BF',
                 },
                 theme: {
