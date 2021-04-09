@@ -18,7 +18,6 @@ class Experience extends Component
     ];
 
     public function mount() {
-        //$this->selected = Box::first();
         $this->selected = Box::where('step_id',$this->step)->first();
     }
     public function timelineSelect($id) {
