@@ -1,5 +1,5 @@
 <section class="body-font">
-    <div class="flex mx-auto flex-wrap mb-2 divide-x-2 divide-paleta-terciario ">
+    <div class="flex mx-auto flex-wrap mb-2 divide-x-2 divide-paleta-secundario ">
         @foreach($boxes as $box)
             <a
                 class="mx-auto px-24 py-3 w-1/2 sm:w-1/{{ $count }} justify-center sm:justify-start border-b-2 title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-cuaternario text-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario hover:border-paleta-cuaternario hover:text-paleta-cuaternario' }} tracking-wider  cursor-pointer"
