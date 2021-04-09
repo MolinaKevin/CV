@@ -2,7 +2,7 @@
     <div class="flex mx-auto flex-wrap mb-2 divide-x-2 divide-paleta-secundario ">
         @foreach($boxes as $box)
             <a
-                class="mx-auto px-2 py-3 text-sm w-1/2 sm:w-1/{{ $count }} justify-center sm:justify-start border-b-2 title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-secundario text-paleta-primario bg-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario '  }} hover:text-paleta-primario hover:bg-paleta-cuaternario tracking-wider cursor-pointer lg:px-12 lg:text-base"
+                class="mx-auto px-24 py-3 text-sm w-1/2 sm:w-1/{{ $count }} justify-center sm:justify-start border-b-2 title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-secundario text-paleta-primario bg-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario '  }} hover:text-paleta-primario hover:bg-paleta-cuaternario tracking-wider cursor-pointer sm:px-2 md:px-12 lg:text-base"
                 wire:click="$emit('changeBox',{{ $box->id }})"
             >
                 <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
