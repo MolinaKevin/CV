@@ -67,7 +67,7 @@
                 <textarea id="message" name="message" placeholder="{{ __('Escribeme a mi directamente') }}" class="lg:w-2/3 rounded-lg md:w-1/2 sm:mr-10 p-10 bg-white rounded focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out border-2 border-paleta-cuaternario"></textarea>
 
                 <div class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:mt-0">
-                    <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg mb-2">{{ __('Contacto directo') }}</button>
+                    <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario rounded py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg mb-2">{{ __('Contacto directo') }}</button>
                     <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{{ __('Oferta') }}</button>
                     <div class="relative mb-4">
                         <label for="name" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
