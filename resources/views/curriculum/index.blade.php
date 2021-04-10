@@ -63,10 +63,10 @@
 
         <x-slot name="content">
 
-            <div class="container px-5 py-6 mx-auto flex sm:flex-nowrap flex-wrap">
+            <div class="container px-5 py-2 mx-auto flex sm:flex-nowrap flex-wrap">
                 <textarea id="message" name="message" placeholder="{{ __('Escribeme a mi directamente') }}" class="lg:w-2/3 rounded-lg md:w-1/2 sm:mr-10 p-10 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out border-2 border-paleta-cuaternario"></textarea>
 
-                <div class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-1 md:mt-0">
+                <div class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:mt-0">
                     <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg mb-2">{{ __('Contacto directo') }}</button>
                     <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">{{ __('Oferta') }}</button>
                     <div class="relative mb-4">
