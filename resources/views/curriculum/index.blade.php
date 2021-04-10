@@ -71,15 +71,15 @@
                     <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario py-2 px-6 focus:outline-none hover:bg-paleta-cuaternario hover:text-paleta-primario rounded text-lg mb-2">{{ __('Oferta') }}</button>
                     <div class="relative mb-4">
                         <label for="name" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
-                        <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <input type="text" id="name" name="name" class="w-full bg-white rounded border border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
                     <div class="relative mb-4">
                         <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
-                        <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <input type="email" id="email" name="email" class="w-full bg-white rounded border border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
                     <div class="relative mb-4">
                         <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
-                        <input type="text" id="subject" name="subject" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <input type="text" id="subject" name="subject" class="w-full bg-white rounded border border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
 
                     <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario py-2 px-6 focus:outline-none hover:bg-paleta-cuaternario hover:text-paleta-primario rounded text-lg mb-2"">{{ __('Enviar') }}</button>
