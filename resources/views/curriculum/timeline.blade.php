@@ -1,6 +1,6 @@
 <div>
     <div class="container px-5 py-24 mx-auto">
-        <div class="-my-8 divide-y-2 divide-paleta-secundario border-2 border-paleta-secundario">
+        <div class="-my-8 divide-y-2 divide-paleta-secundario ">
             @foreach($steps as $step)
                 <div class="flex flex-col">
                     <div class="pt-8 pb-1 flex flex-wrap md:flex-nowrap js-show-on-scroll ">
