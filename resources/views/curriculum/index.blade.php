@@ -63,7 +63,7 @@
 
         <x-slot name="content">
 
-                        <livewire:experience/>
+                        <livewire:contact />
         </x-slot>
 
         <x-slot name="footer">
