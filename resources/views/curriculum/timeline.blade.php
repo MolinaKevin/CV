@@ -20,13 +20,11 @@
                                 </a>
                             @endif
                         </div>
-
                     </div>
                     @if($active == $step->id)
                         <livewire:experience :step="$active" />
                     @endif
                 </div>
-
             @endforeach
         </div>
     </div>
