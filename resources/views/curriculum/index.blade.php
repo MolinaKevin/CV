@@ -82,7 +82,7 @@
                         <input type="text" id="subject" name="subject" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
 
-                    <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario py-2 px-6 focus:outline-none hover:bg-paleta-cuaternario hover:text-paleta-primario rounded text-lg mb-2"">{{ __('Enviar') }}</button>
+                    <button class="text-paleta-cuaternario bg-paleta-primario border-2 border-paleta-cuaternario py-2 px-6 focus:outline-none hover:bg-paleta-cuaternario hover:text-paleta-primario rounded text-lg mb-2">{{ __('Enviar') }}</button>
                 </div>
           </div>
         </x-slot>
