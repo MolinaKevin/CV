@@ -10,6 +10,10 @@
                     <svg fill="currentColor" viewBox="0 0 20 20" class="-ml-1 mr-3 w-5 h-5 text-white group-focus:text-amber-300"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path></svg>
                     Bookmark
                 </button>
+                <button type="button" class="group inline-flex items-center py-2 px-4 bg-paleta-secundario text-white font-semibold rounded-lg shadow-md focus:bg-amber-600 focus:outline-none">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="-ml-1 mr-3 w-5 h-5 text-white group-focus:text-amber-300"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path></svg>
+                    Bookmark
+                </button>
             </div>
             <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
