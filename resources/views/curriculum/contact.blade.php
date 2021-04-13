@@ -16,6 +16,34 @@
                 </button>
             </div>
             <div class="relative mb-4">
+<div class="flex m-2">
+            <button class="text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
+        hover:bg-gray-200
+        bg-gray-100
+        text-gray-700
+        border duration-200 ease-in-out
+        border-gray-600 transition">
+                <div class="flex leading-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left w-5 h-5">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Back</div>
+            </button>
+            <button class="text-base  rounded-l-none border-l-0  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
+        hover:bg-teal-200
+        bg-teal-100
+        text-teal-700
+        border duration-200 ease-in-out
+        border-teal-600 transition">
+                <div class="flex leading-5">Next
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right w-5 h-5 ml-1">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
+            </button>
+        </div>
+            </div>
+            <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
                 <input type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
