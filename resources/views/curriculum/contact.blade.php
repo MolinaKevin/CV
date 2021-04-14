@@ -8,7 +8,7 @@
             <div class="relative mb-4">
                 <div class="flex my-2 ">
                     <button class="w-1/2 text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
-                hover:bg-paleta-cuaternario hover:text-paleta-cuaternario
+                hover:border-paleta-cuaternario hover:text-paleta-primario
                 bg-teal-100
                 text-teal-700
                 border duration-200 ease-in-out
