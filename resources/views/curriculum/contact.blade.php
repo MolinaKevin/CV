@@ -10,9 +10,15 @@
                     <button class="w-1/2 text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
                 hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
                 bg-teal-100
-                text-teal-700
+                @if(1 == 0)
+                    text-paleta-cuaternario
+                    border-paleta-cuaternario
+                @else
+                    text-paleta-secundario
+                    border-paleta-secundario
+                @endif
                 border duration-200 ease-in-out
-                border-teal-600 transition">
+                transition">
                         <div class="flex leading-5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle w-5 h-5 mr-1">
                                 <circle cx="12" cy="12" r="10"></circle>
