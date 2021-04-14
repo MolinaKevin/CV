@@ -19,7 +19,7 @@ class Contact extends Component
         'comment' => 'required|min:5',
     ];
 
-    public function contactFormSubmit()
+    public function contactSubmit()
     {
         $contact = $this->validate();
 
@@ -30,8 +30,8 @@ class Contact extends Component
             'comment' => $this->comment,
             ),
             function($message){
-                $message->from('your_email@your_domain.com');
-                $message->to('your_email@your_domain.com', 'Bobby')->subject('Your Site Contect Form');
+                $message->from('i@molinakev.in');
+                $message->to($this->to, 'Bobby')->subject('Your Site Contect Form');
             }
         );
 
