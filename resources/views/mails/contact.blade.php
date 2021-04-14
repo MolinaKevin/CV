@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>Llamado de emergencia</title>
+    <title>{{ __ ('Respuesta automatica') }}</title>
 </head>
 <body>
     {{ __('Hola') }} <i>{{ $email->sender }}</i>,
@@ -13,7 +13,7 @@
 
     <p>{{ __('Aquí puede ver el contenido del mensaje que me ha enviado:') }}</p>
 
-    <div>
+    <div style="width: 100%; border:1px solid #000; padding-top: 5px; padding-bottom: 5px;">
     {{ $email->message }}
     </div>
     <br/>
