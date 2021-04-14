@@ -20,11 +20,17 @@
                             Save</div>
                     </button>
                     <button class="w-1/2 text-base  rounded-l-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
-                hover:bg-teal-700 hover:text-teal-100
+                hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
                 bg-teal-100
-                text-teal-700
+                @if(1 == 1)
+                    text-paleta-cuaternario
+                    border-paleta-cuaternario
+                @else
+                    text-paleta-secundario
+                    border-paleta-secundario
+                @endif
                 border duration-200 ease-in-out
-                border-teal-600 transition">
+                transition">
                         <div class="flex leading-5">
                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle w-5 h-5 mr-1">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
