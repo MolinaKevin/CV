@@ -11,11 +11,12 @@
                 hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
                 bg-teal-100
                 @if(1 == 0)
-                    text-paleta-cuaternario
+                    bg-paleta-cuaternario
+                    text-paleta-primario
                     border-paleta-cuaternario
                 @else
-                    text-paleta-secundario
-                    border-paleta-secundario
+                    text-paleta-cuaternario
+                    border-paleta-cuaternario
                 @endif
                 border duration-200 ease-in-out
                 transition">
@@ -32,8 +33,8 @@
                     text-paleta-primario
                     border-paleta-cuaternario
                 @else
-                    text-paleta-secundario
-                    border-paleta-secundario
+                    text-paleta-cuaternario
+                    border-paleta-cuaternario
                 @endif
                 border duration-200 ease-in-out
                 transition">
