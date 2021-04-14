@@ -28,10 +28,10 @@ class Contact extends Component
         $email = new \stdClass();
         $email->message = $this->message;
         $email->sender = $this->name;
+        $email->subject = $this->subject;
 
         Mail::to($this->to)
             ->cc('i@molinakev.in')
-            ->subject($this->subject)
             ->send(new ContactEmail($email));
 
         $this->success = 'Thank you for reaching out to us!';

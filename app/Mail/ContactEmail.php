@@ -36,6 +36,6 @@ class ContactEmail extends Mailable
     {
         return $this->from('i@molinakev.in')
                     ->view('mails.test')
-                    ->text('mails.test_plain');
+                    ->subject('Test');
     }
 }
