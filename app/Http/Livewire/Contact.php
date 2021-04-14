@@ -23,17 +23,9 @@ class Contact extends Component
     {
         //$contact = $this->validate();
 
-        Mail::send('email',
-        array(
-            'name' => 'Kev',
-            'email' => 'offers@molinakev.in',
-            'comment' => 'Algo algo',
-            ),
-            function($message){
-                $message->from('i@molinakev.in');
-                $message->to($this->to, 'Bobby')->subject('Your Site Contect Form');
-            }
-        );
+        Mail::to($this->to)
+            ->cc('i@molinakev.in')
+            ->send("ggggggg");
 
         $this->success = 'Thank you for reaching out to us!';
 
