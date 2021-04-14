@@ -39,6 +39,11 @@ class Contact extends Component
         $this->clearFields();
     }
 
+    public function setEmail($id)
+    {
+        $this->active = $id;
+    }
+
     private function clearFields()
     {
         $this->name = '';
