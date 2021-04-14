@@ -21,7 +21,7 @@ class Contact extends Component
 
     public function contactSubmit()
     {
-        $contact = $this->validate();
+        //$contact = $this->validate();
 
         Mail::send('email',
         array(
