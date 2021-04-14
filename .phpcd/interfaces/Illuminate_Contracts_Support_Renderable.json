@@ -1,1 +1,1 @@
-["App\\Mail\\ContactEmail"]
+["App\\Mail\\ContactEmail","App\\Mail\\OfferEmail"]
