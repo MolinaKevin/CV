@@ -25,9 +25,9 @@ class Contact extends Component
 
         Mail::send('email',
         array(
-            'name' => $this->name,
-            'email' => $this->email,
-            'comment' => $this->comment,
+            'name' => 'Kev',
+            'email' => 'offers@molinakev.in',
+            'comment' => 'Algo algo',
             ),
             function($message){
                 $message->from('i@molinakev.in');
