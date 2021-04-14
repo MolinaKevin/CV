@@ -10,15 +10,21 @@ use Illuminate\Queue\SerializesModels;
 class OfferEmail extends Mailable
 {
     use Queueable, SerializesModels;
+     /**
+     * The demo object instance.
+     *
+     * @var Demo
+     */
+    public $email;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($email)
     {
-        //
+        $this->email = $email;
     }
 
     /**
