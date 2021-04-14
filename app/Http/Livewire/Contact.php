@@ -8,9 +8,10 @@ use Mail;
 
 class Contact extends Component
 {
-    public $name;
-    public $email;
-    public $comment;
+    public $name = '';
+    public $email = '';
+    public $message = '';
+    public $subject = '';
     public $success;
     public $active = 1;
     public $to = "offers@molinakev.in";
@@ -24,15 +25,14 @@ class Contact extends Component
     {
         //$contact = $this->validate();
 
-        $objDemo = new \stdClass();
-        $objDemo->demo_one = 'Demo One Value';
-        $objDemo->demo_two = 'Demo Two Value';
-        $objDemo->sender = 'SenderUserName';
-        $objDemo->receiver = 'ReceiverUserName';
+        $email = new \stdClass();
+        $email->message = $this->message;
+        $email->sender = $this->name;
 
         Mail::to($this->to)
             ->cc('i@molinakev.in')
-            ->send(new ContactEmail($objDemo));
+            ->subject($this->subject)
+            ->send(new ContactEmail($email));
 
         $this->success = 'Thank you for reaching out to us!';
 

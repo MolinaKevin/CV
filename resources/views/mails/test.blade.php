@@ -1,18 +1,16 @@
-Hello <i>{{ $email->receiver }}</i>,
-<p>This is a demo email for testing purposes! Also, it's the HTML version.</p>
+{{ __('Hola') }} <i>{{ $email->sender }}</i>,
+use _;
+<p>{{ __('Muchas gracias por ponerte en contacto conmigo. Recibirá una respuesta de mi parte a la brevedad.') }}</p>
 
-<p><u>Demo object values:</u></p>
-
-<div>
-<p><b>Demo One:</b>&nbsp;{{ $email->demo_one }}</p>
-<p><b>Demo Two:</b>&nbsp;{{ $email->demo_two }}</p>
-</div>
-
-<p><u>Values passed by With method:</u></p>
+<p>{{ __('Aquí puede ver el contenido del mensaje que me ha enviado:') }}</p>
 
 <div>
+{{ $email->message }}
 </div>
 
-Thank You,
+<p>{{ __('Si usted no se ha puesto en contacto conmigo, tenga en cuenta que alguien pudiere estar usando sus credenciales.') }}</p>
+
+{{ __('Muchas gracias') }}
 <br/>
-<i>{{ $email->sender }}</i>
+<a href="https://molinakev.in">https://molinakev.in</a>
+<i>Kevin Molina</i>

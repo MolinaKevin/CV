@@ -63,17 +63,21 @@
                 </div>
             </div>
             <div class="relative mb-4">
+                <label for="nombre" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
+                <input wire:model="name" type="text" id="name" name="name" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
-                <input type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
-                <input type="text" id="subject" name="subject" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <input wire:model="subject" type="text" id="subject" name="subject" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
 
             <div class="relative mb-4">
                 <label for="message" class="leading-7 text-sm text-gray-600">{{ __('Mensaje') }}</label>
-                <textarea id="message" name="message" class="w-full bg-white rounded focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out border-2 border-paleta-cuaternario"></textarea>
+                <textarea wire:model="message" id="message" name="message" class="w-full bg-white rounded focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out border-2 border-paleta-cuaternario"></textarea>
             </div>
             <button class="bg-paleta-secundario hover:bg-paleta-quinario text-paleta-quinario hover:text-paleta-secundario font-bold border-0 py-2 px-6 focus:outline-none rounded text-lg"
                 wire:click="contactSubmit">
