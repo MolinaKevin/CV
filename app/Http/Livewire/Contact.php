@@ -40,7 +40,7 @@ class Contact extends Component
             ->cc('i@molinakev.in')
             ->send(new OfferEmail($email));
 
-        $this->success = 'Thank you for reaching out to us!';
+        $this->success = __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.');
 
         $this->clearFields();
     }
@@ -59,7 +59,7 @@ class Contact extends Component
     {
         $this->name = '';
         $this->email = '';
-        $this->comment = '';
+        $this->message = '';
     }
 
     public function render()
