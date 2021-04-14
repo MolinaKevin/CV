@@ -1,5 +1,6 @@
 {{ __('Hola') }} <i>{{ $email->sender }}</i>,
 <br/>
+<br/>
 <p>{{ __('Muchas gracias por ponerte en contacto conmigo. Recibirá una respuesta de mi parte a la brevedad.') }}</p>
 
 <p>{{ __('Aquí puede ver el contenido del mensaje que me ha enviado:') }}</p>
