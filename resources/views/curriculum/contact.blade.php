@@ -38,7 +38,7 @@
         border duration-200 ease-in-out
         border-teal-600 transition">
                 <div class="flex leading-5">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     View</div>
             </button>
         </div>
