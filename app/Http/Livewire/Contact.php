@@ -23,16 +23,27 @@ class Contact extends Component
 
     public function contactSubmit()
     {
-        //$contact = $this->validate();
+        $contact = $this->validate();
 
         $email = new \stdClass();
         $email->message = $this->message;
         $email->sender = $this->name;
         $email->subject = $this->subject;
 
-        Mail::to($this->to)
+        // Mail for sender
+        Mail::to($this->email)
             ->cc('i@molinakev.in')
             ->send(new ContactEmail($email));
+        // Mail for me
+        if ($this->active == 0) {
+            Mail::to($this->to)
+                ->cc('i@molinakev.in')
+                ->send(new ContactEmail($email));
+        } else {
+            Mail::to($this->to)
+                ->cc('i@molinakev.in')
+                ->send(new ContactEmail($email));
+        }
 
         $this->success = 'Thank you for reaching out to us!';
 
