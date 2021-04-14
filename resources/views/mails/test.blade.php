@@ -1,11 +1,11 @@
-Hello <i>{{ $demo->receiver }}</i>,
+Hello <i>{{ $email->receiver }}</i>,
 <p>This is a demo email for testing purposes! Also, it's the HTML version.</p>
 
 <p><u>Demo object values:</u></p>
 
 <div>
-<p><b>Demo One:</b>&nbsp;{{ $demo->demo_one }}</p>
-<p><b>Demo Two:</b>&nbsp;{{ $demo->demo_two }}</p>
+<p><b>Demo One:</b>&nbsp;{{ $email->demo_one }}</p>
+<p><b>Demo Two:</b>&nbsp;{{ $email->demo_two }}</p>
 </div>
 
 <p><u>Values passed by With method:</u></p>
@@ -15,4 +15,4 @@ Hello <i>{{ $demo->receiver }}</i>,
 
 Thank You,
 <br/>
-<i>{{ $demo->sender }}</i>
+<i>{{ $email->sender }}</i>
