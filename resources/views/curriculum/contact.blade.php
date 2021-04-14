@@ -8,44 +8,54 @@
             <div class="relative mb-4">
                 <div class="flex my-2 ">
                     <button class="w-1/2 text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
-                hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
-                bg-teal-100
-                @if($active == 0)
-                    bg-paleta-cuaternario
-                    text-paleta-primario
-                    border-paleta-cuaternario
-                @else
-                    text-paleta-cuaternario
-                    border-paleta-cuaternario
-                @endif
-                border duration-200 ease-in-out
-                transition"
+                    hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
+                    bg-teal-100
+                    @if($active == 0)
+                        bg-paleta-cuaternario
+                        text-paleta-primario
+                        border-paleta-cuaternario
+                    @else
+                        text-paleta-cuaternario
+                        border-paleta-cuaternario
+                    @endif
+                    border duration-200 ease-in-out
+                    transition"
 
-                wire:click="setEmail(0)">
+                    wire:click="setEmail(0)">
                         <div class="flex leading-5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle w-5 h-5 mr-1">
+                             @if($active == 1)
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            @else
                                 <circle cx="12" cy="12" r="10"></circle>
+                            @endif
                             </svg>
                             {{ __('Contacto') }}</div>
                     </button>
                     <button class="w-1/2 text-base  rounded-l-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
-                hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
-                @if($active == 1)
-                    bg-paleta-cuaternario
-                    text-paleta-primario
-                    border-paleta-cuaternario
-                @else
-                    text-paleta-cuaternario
-                    border-paleta-cuaternario
-                @endif
-                border duration-200 ease-in-out
-                transition"
+                    hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
+                    @if($active == 1)
+                        bg-paleta-cuaternario
+                        text-paleta-primario
+                        border-paleta-cuaternario
+                    @else
+                        text-paleta-cuaternario
+                        border-paleta-cuaternario
+                    @endif
+                    border duration-200 ease-in-out
+                    transition"
 
-                wire:click="setEmail(1)">
+                    wire:click="setEmail(1)">
                         <div class="flex leading-5">
                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle w-5 h-5 mr-1">
+
+                            @if($active == 1)
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            @else
+                                <circle cx="12" cy="12" r="10"></circle>
+                            @endif
                            </svg>
 
                             {{ __('Ofertas') }}</div>
