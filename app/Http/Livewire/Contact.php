@@ -12,6 +12,7 @@ class Contact extends Component
     public $comment;
     public $success;
     public $active = 1;
+    public $to = "offers@molinakev.in";
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
@@ -41,6 +42,11 @@ class Contact extends Component
 
     public function setEmail($id)
     {
+        if ($id == 0) {
+            $this->to = "contact@molinakev.in";
+        } else {
+            $this->to = "offers@molinakev.in";
+        }
         $this->active = $id;
     }
 
