@@ -35,8 +35,8 @@ class ContactEmail extends Mailable
     public function build()
     {
         return $this->from('i@molinakev.in')
-                    ->view('mails.test')
-                    ->text('mails.test_plain')
+                    ->view('mails.contact')
+                    ->text('mails.contact_plain')
                     ->subject(__('Respuesta automatica'));
     }
 }

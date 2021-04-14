@@ -26,6 +26,10 @@
     "Aquí puede ver el contenido del mensaje que me ha enviado:": "Hier sehen Sie den Inhalt der Nachricht, die Sie mir gesendet haben:",
     "Si usted no se ha puesto en contacto conmigo, tenga en cuenta que alguien pudiere estar usando sus credenciales.": "Wenn Sie mich nicht kontaktiert haben, beachten Sie, dass möglicherweise jemand Ihre Kontaktdaten verwendet.",
     "Hola": "Hallo",
-    "Muchas Gracias": "Mit freundlichen Grüßen",
-    "Respuesta automatica": "Automatische Antwort"
+    "Muchas gracias": "Mit freundlichen Grüßen",
+    "Respuesta automatica": "Automatische Antwort",
+    "Ofertas": "Angebote",
+    "Nombre": "Name",
+    "Asunto": "Subject",
+    "Mensaje": "Nachricht"
 }

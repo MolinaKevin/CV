@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\ContactEmail;
+use App\Mail\OfferEmail;
 use Livewire\Component;
 use Mail;
 
@@ -35,15 +36,9 @@ class Contact extends Component
             ->cc('i@molinakev.in')
             ->send(new ContactEmail($email));
         // Mail for me
-        if ($this->active == 0) {
-            Mail::to($this->to)
-                ->cc('i@molinakev.in')
-                ->send(new ContactEmail($email));
-        } else {
-            Mail::to($this->to)
-                ->cc('i@molinakev.in')
-                ->send(new ContactEmail($email));
-        }
+        Mail::to($this->to)
+            ->cc('i@molinakev.in')
+            ->send(new OfferEmail($email));
 
         $this->success = 'Thank you for reaching out to us!';
 
