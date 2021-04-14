@@ -6,7 +6,7 @@
         <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">{{ __('Formulario de contacto') }}</h2>
             <div class="relative mb-4">
-                <div class="flex m-2 ">
+                <div class="flex my-2 ">
                     <button class="w-1/2 text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
                 hover:bg-teal-700 hover:text-teal-100
                 bg-teal-100
