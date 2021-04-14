@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\ContactEmail;
 use Livewire\Component;
 use Mail;
 
@@ -23,9 +24,15 @@ class Contact extends Component
     {
         //$contact = $this->validate();
 
+        $objDemo = new \stdClass();
+        $objDemo->demo_one = 'Demo One Value';
+        $objDemo->demo_two = 'Demo Two Value';
+        $objDemo->sender = 'SenderUserName';
+        $objDemo->receiver = 'ReceiverUserName';
+
         Mail::to($this->to)
             ->cc('i@molinakev.in')
-            ->send("ggggggg");
+            ->send(new ContactEmail($objDemo));
 
         $this->success = 'Thank you for reaching out to us!';
 
