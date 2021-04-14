@@ -22,7 +22,7 @@
                     <button class="w-1/2 text-base  rounded-l-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
                 hover:border-paleta-cuaternario hover:bg-paleta-cuaternario hover:text-paleta-primario
                 bg-teal-100
-                @if(1 == 1)
+                @if(1 == 0)
                     text-paleta-cuaternario
                     border-paleta-cuaternario
                 @else
