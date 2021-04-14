@@ -7,7 +7,7 @@
             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">{{ __('Formulario de contacto') }}</h2>
             <div class="relative mb-4">
                 <div class="flex m-2 ">
-                    <button class="text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
+                    <button class="w-1/2 text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
                 hover:bg-teal-700 hover:text-teal-100
                 bg-teal-100
                 text-teal-700
@@ -19,7 +19,7 @@
                             </svg>
                             Save</div>
                     </button>
-                    <button class="text-base  rounded-l-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
+                    <button class="w-1/2 text-base  rounded-l-none  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
                 hover:bg-teal-700 hover:text-teal-100
                 bg-teal-100
                 text-teal-700
