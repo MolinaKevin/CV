@@ -11,6 +11,7 @@ class Contact extends Component
     public $email;
     public $comment;
     public $success;
+    public $active = 1;
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
