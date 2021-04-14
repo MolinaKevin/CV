@@ -18,7 +18,7 @@ class Contact extends Component
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
-        'comment' => 'required|min:5',
+        'message' => 'required|min:5',
     ];
 
     public function contactSubmit()
