@@ -69,6 +69,8 @@
             <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
                 <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    @error('email') <span class="error">{{ $message }}</span> @enderror
+
             </div>
             <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
