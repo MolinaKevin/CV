@@ -78,7 +78,6 @@
 
         <x-slot name="content">
 
-                        <livewire:contact />
         </x-slot>
 
         <x-slot name="footer">

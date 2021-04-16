@@ -7,11 +7,20 @@ use Livewire\Component;
 
 class Index extends Component
 {
-
     public $modal = false;
+    public $alert = false;
+
+    protected $listeners = [
+        'showAlert',
+    ];
+
 
     public function showModal() {
         $this->modal = true;
+    }
+
+    public function showAlert() {
+        $this->alert = true;
     }
 
     public function render()
