@@ -77,7 +77,7 @@
         </x-slot>
 
         <x-slot name="content">
-           <p wire:model="retorno"></p>
+            {{ $retorno }}
         </x-slot>
 
         <x-slot name="footer">
