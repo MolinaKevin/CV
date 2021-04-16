@@ -16,12 +16,18 @@ class Contact extends Component
     public $subject = '';
     public $active = 1;
     public $to = "offers@molinakev.in";
+
     protected $rules = [
         'name' => 'required',
         'subject' => 'required',
         'email' => 'required|email',
         'message' => 'required|min:5',
     ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
     public function contactSubmit()
     {
