@@ -21,6 +21,7 @@ class Experience extends Component
         $this->selected = Box::where('step_id',$this->step)->first();
     }
     public function timelineSelect($id) {
+        alert('a');
         $this->step = $id;
         $box = Step::find($id)->boxes()->first();
         $this->changeBox($box->id);
