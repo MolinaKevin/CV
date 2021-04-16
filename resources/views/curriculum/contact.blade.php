@@ -66,11 +66,11 @@
                 <label for="nombre" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
                 <input wire:model="name" type="text" id="name" name="name" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
-            <div class="relative mb-4">
+            <div class="relative inline-flex  mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
 
-                <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                <span class="flex h-3 w-3">
+                <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
                 </span>
