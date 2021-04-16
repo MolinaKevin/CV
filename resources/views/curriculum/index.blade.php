@@ -71,7 +71,7 @@
         </x-slot>
     </x-dialog-modal>
 
-    <x-dialog-modal wire:model="alert" maxWidth="7xl">
+    <x-dialog-modal wire:model="alert" maxWidth="sm">
         <x-slot name="title">
             {{ __('Enviame un mail') }}
         </x-slot>

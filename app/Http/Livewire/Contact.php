@@ -25,6 +25,7 @@ class Contact extends Component
     public function contactSubmit()
     {
         $this->emit('showAlert');
+
         $contact = $this->validate();
 
         $email = new \stdClass();
@@ -61,6 +62,7 @@ class Contact extends Component
         $this->name = '';
         $this->email = '';
         $this->message = '';
+        $this->subject = '';
     }
 
     public function render()

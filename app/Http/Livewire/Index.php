@@ -21,6 +21,7 @@ class Index extends Component
 
     public function showAlert() {
         $this->alert = true;
+        $this->modal = false;
     }
 
     public function render()
