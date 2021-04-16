@@ -80,7 +80,7 @@
                 <textarea wire:model="message" id="message" name="message" class="w-full bg-white rounded focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out border-2 border-paleta-cuaternario"></textarea>
             </div>
             <button class="bg-paleta-secundario hover:bg-paleta-quinario text-paleta-quinario hover:text-paleta-secundario font-bold border-0 py-2 px-6 focus:outline-none rounded text-lg"
-                wire:submit.prevent="contactSubmit">
+                wire:click="contactSubmit">
                 {{ __('Enviar') }}
             </button>
         </div>
