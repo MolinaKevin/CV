@@ -77,7 +77,9 @@
         </x-slot>
 
         <x-slot name="content">
-
+            @if (session()->has('alert'))
+                {{ session('alert') }}
+            @endif
         </x-slot>
 
         <x-slot name="footer">

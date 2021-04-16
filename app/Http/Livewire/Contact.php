@@ -13,11 +13,11 @@ class Contact extends Component
     public $email = '';
     public $message = '';
     public $subject = '';
-    public $success;
     public $active = 1;
     public $to = "offers@molinakev.in";
     protected $rules = [
         'name' => 'required',
+        'subject' => 'required',
         'email' => 'required|email',
         'message' => 'required|min:5',
     ];
@@ -39,10 +39,13 @@ class Contact extends Component
             ->send(new ContactEmail($email));
         // Mail for me
         Mail::to($this->to)
-            ->cc('i@molinakev.in')
             ->send(new OfferEmail($email));
 
-        $this->success = __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.');
+        if( count(Mail::failures()) > 0 ) {
+            session()->flash('alert', __('Hubo un error inesperado. Si lo desea puede ponerse en contacto conmigo a traves de mi mail i@molinakev.in'));
+        } else {
+            session()->flash('alert', __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.'));
+        }
 
         $this->clearFields();
     }
