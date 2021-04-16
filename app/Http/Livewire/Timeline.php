@@ -29,6 +29,7 @@ class Timeline extends Component
 
     public function showMore($id)
     {
+        alert('eee');
         $this->active = $id;
     }
 }

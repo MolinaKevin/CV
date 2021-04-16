@@ -71,6 +71,21 @@
         </x-slot>
     </x-dialog-modal>
 
+    <x-dialog-modal wire:model="alert" maxWidth="7xl">
+        <x-slot name="title">
+            {{ __('Enviame un mail') }}
+        </x-slot>
+
+        <x-slot name="content">
+
+                        <livewire:contact />
+        </x-slot>
+
+        <x-slot name="footer">
+
+        </x-slot>
+    </x-dialog-modal>
+
 
     <script>
         var TxtRotate = function(el, toRotate, period) {

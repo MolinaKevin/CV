@@ -8,7 +8,7 @@
 {{ $email->message }}
 --------------------------------------
 
-{{ __('Si usted no se ha puesto en contacto conmigo, tenga en cuenta que alguien pudiere estar usando sus credenciales.') }}</p>
+{{ __('Si usted no se ha puesto en contacto conmigo, tenga en cuenta que alguien pudiere estar usando sus credenciales.') }}
 
 {{ __('Muchas gracias') }}
 
