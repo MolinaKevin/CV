@@ -42,9 +42,9 @@ class Contact extends Component
             ->send(new OfferEmail($email));
 
         if( count(Mail::failures()) > 0 ) {
-            session()->flash('alert', __('Hubo un error inesperado. Si lo desea puede ponerse en contacto conmigo a traves de mi mail i@molinakev.in'));
+            session()->flash('message', __('Hubo un error inesperado. Si lo desea puede ponerse en contacto conmigo a traves de mi mail i@molinakev.in'));
         } else {
-            session()->flash('alert', __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.'));
+            session()->flash('message', __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.'));
         }
 
         $this->clearFields();

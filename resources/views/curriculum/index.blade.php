@@ -77,8 +77,8 @@
         </x-slot>
 
         <x-slot name="content">
-            @if (session()->has('alert'))
-                {{ session('alert') }}
+            @if (session()->has('message'))
+                {{ session('message') }}
             @endif
         </x-slot>
 
