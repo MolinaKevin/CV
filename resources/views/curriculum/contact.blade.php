@@ -68,8 +68,10 @@
             </div>
             <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
+<span class="flex h-3 w-3">
   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-
+  <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+</span>
                 <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 @error('email') <span class="error">{{ $message }}</span> @enderror
 
