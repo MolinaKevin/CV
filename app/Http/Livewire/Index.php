@@ -9,9 +9,11 @@ class Index extends Component
 {
     public $modal = false;
     public $alert = false;
+    public $retorno;
 
     protected $listeners = [
         'showAlert',
+        'message'
     ];
 
 
@@ -22,6 +24,10 @@ class Index extends Component
     public function showAlert() {
         $this->alert = true;
         $this->modal = false;
+    }
+
+    public function message($content) {
+        $this->retorno = $content;
     }
 
     public function render()

@@ -77,9 +77,7 @@
         </x-slot>
 
         <x-slot name="content">
-            @if (session()->has('message'))
-                {{ session('message') }}
-            @endif
+           <p wire:model="retorno"></p>
         </x-slot>
 
         <x-slot name="footer">
