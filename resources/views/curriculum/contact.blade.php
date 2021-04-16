@@ -68,7 +68,7 @@
             </div>
             <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
             <div class="relative mb-4">
-                <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                <input wire:model="email" type="email" id="email" name="email" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out @error('email') border-red-500 @enderror " />
                 @error('email')
                     <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
