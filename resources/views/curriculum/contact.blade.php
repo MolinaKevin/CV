@@ -64,7 +64,7 @@
             </div>
             <label for="name" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
             <div class="relative mb-4">
-                <input wire:model="name" type="text" id="name" name="name" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out @error('name') border-red-500 @else border-paleta-cuaternario @enderror">
+                <input wire:model="name" type="text" id="name" name="name" class="w-full bg-white rounded border-2 focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out @error('name') border-red-500 @else border-paleta-cuaternario @enderror">
                 @error('name')
                     <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -86,7 +86,7 @@
             </div>
             <label for="subject" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
             <div class="relative mb-4">
-                <input wire:model="subject" type="text" id="subject" name="subject" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out @error('subject')border-red-500 @else border-paleta-cuaternario @enderror">
+                <input wire:model="subject" type="text" id="subject" name="subject" class="w-full bg-white rounded border-2 focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out @error('subject')border-red-500 @else border-paleta-cuaternario @enderror">
                 @error('subject')
                     <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
