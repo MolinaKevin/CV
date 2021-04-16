@@ -6,6 +6,7 @@ use App\Mail\ContactEmail;
 use App\Mail\OfferEmail;
 use Livewire\Component;
 use Mail;
+use Illuminate\Support\Facades\Session;
 
 class Contact extends Component
 {
