@@ -71,13 +71,16 @@
         </x-slot>
     </x-dialog-modal>
 
-    <x-dialog-modal wire:model="alert" maxWidth="sm">
+    <x-dialog-modal wire:model="alert" maxWidth="md">
         <x-slot name="title">
-            {{ __('Enviame un mail') }}
         </x-slot>
 
         <x-slot name="content">
-            {{ $retorno }}
+            @if($retorno)
+                {{ $retorno }}
+            @else
+                asdasd
+            @endif
         </x-slot>
 
         <x-slot name="footer">
