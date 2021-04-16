@@ -62,9 +62,16 @@
                     </button>
                 </div>
             </div>
-            <label for="nombre" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
+            <label for="name" class="leading-7 text-sm text-paleta-secundario">{{ __('Nombre') }}</label>
             <div class="relative mb-4">
                 <input wire:model="name" type="text" id="name" name="name" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                @error('name')
+                    <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    <span class="error">{{ $message }}</span>
+                @enderror
             </div>
             <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Email') }}</label>
             <div class="relative mb-4">
@@ -77,13 +84,27 @@
                     <span class="error">{{ $message }}</span>
                 @enderror
             </div>
-            <label for="email" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
+            <label for="subject" class="leading-7 text-sm text-paleta-secundario">{{ __('Asunto') }}</label>
             <div class="relative mb-4">
                 <input wire:model="subject" type="text" id="subject" name="subject" class="w-full bg-white rounded border-2 border-paleta-cuaternario focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                @error('email')
+                    <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    <span class="error">{{ $message }}</span>
+                @enderror
             </div>
             <label for="message" class="leading-7 text-sm text-paleta-secundario">{{ __('Mensaje') }}</label>
             <div class="relative mb-4">
                 <textarea wire:model="message" id="message" name="message" class="w-full bg-white rounded focus:border-paleta-cuaternario focus:ring-2 focus:ring-paleta-cuaternario h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out border-2 border-paleta-cuaternario"></textarea>
+                @error('message')
+                    <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    <span class="error">{{ $message }}</span>
+                @enderror
             </div>
             <button class="bg-paleta-secundario hover:bg-paleta-quinario text-paleta-quinario hover:text-paleta-secundario font-bold border-0 py-2 px-6 focus:outline-none rounded text-lg"
                 wire:click="contactSubmit">
