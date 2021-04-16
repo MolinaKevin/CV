@@ -40,6 +40,7 @@ class Contact extends Component
         // Mail for me
         Mail::to($this->to)
             ->send(new OfferEmail($email));
+        dd(Session::has('status'));
 
         if( count(Mail::failures()) > 0 ) {
             $this->emit('message', __('Hubo un error inesperado. Si lo desea puede ponerse en contacto conmigo a traves de mi mail i@molinakev.in'));
