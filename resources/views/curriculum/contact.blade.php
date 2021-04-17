@@ -106,7 +106,7 @@
                     <span class="error">{{ $message }}</span>
                 @enderror
             </div>
-            <button class="bg-paleta-secundario hover:bg-paleta-quinario text-paleta-quinario hover:text-paleta-secundario font-bold border-0 py-2 px-6 focus:outline-none rounded text-lg"
+            <button class="bg-paleta-cuaternario hover:bg-paleta-quinario text-paleta-primario hover:text-paleta-secundario font-bold border-0 py-2 px-6 focus:outline-none rounded text-lg"
                 wire:click="contactSubmit">
                 {{ __('Enviar') }}
             </button>
