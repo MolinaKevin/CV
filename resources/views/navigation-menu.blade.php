@@ -19,12 +19,14 @@
             {{ __('Contacto') }}
         </x-nav-link>
      </nav>
-    <a href="https://es.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 mr-2 md:mt-0">
-        ES
-    </a>
-    <a href="https://de.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 md:mt-0">
-        DE
-    </a>
+    <div class="inline-flex">
+        <a href="https://es.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 mr-2 md:mt-0">
+            ES
+        </a>
+        <a href="https://de.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 md:mt-0">
+            DE
+        </a>
+    </div>
     <!-- Hamburger -->
     <div class="-mr-2 flex items-center sm:hidden">
         <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
