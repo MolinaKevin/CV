@@ -10,7 +10,7 @@ class Timeline extends Component
 {
 
     public $more = false;
-
+    public $modal = false;
     public $active = 16;
 
     protected $listeners = [
@@ -36,6 +36,6 @@ class Timeline extends Component
 
     public function showModal(Screenshot $screenshot)
     {
-        dd($screenshot);
+        $this->modal = true;
     }
 }
