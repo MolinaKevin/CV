@@ -30,15 +30,15 @@
     </div>
     <x-dialog-modal wire:model="modal" maxWidth="7xl">
         <x-slot name="title">
-            {{ $screen->getTranslation('subtitle', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
+            {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
         </x-slot>
 
         <x-slot name="content">
 		    <img src="{{ asset('storage/images/' . $screen->path) }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+            {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
         </x-slot>
 
         <x-slot name="footer">
-            {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
 
         </x-slot>
     </x-dialog-modal>
