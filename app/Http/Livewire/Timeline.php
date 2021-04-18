@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Screenshot;
 use Livewire\Component;
 use App\Models\Step;
 
@@ -13,7 +14,8 @@ class Timeline extends Component
     public $active = 16;
 
     protected $listeners = [
-        'timelineSelect' => 'showMore'
+        'timelineSelect' => 'showMore',
+        'showModal'
     ];
 
     public function mount() {
@@ -30,5 +32,10 @@ class Timeline extends Component
     public function showMore($id)
     {
         $this->active = $id;
+    }
+
+    public function showModal(Screenshot $screenshot)
+    {
+        dd($screenshot);
     }
 }

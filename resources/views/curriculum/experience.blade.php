@@ -32,7 +32,7 @@
                     <div class="flex flex-wrap -m-4">
                         @foreach($selected->screenshots as $image)
                             <div class="lg:w-1/3 sm:w-1/2 p-4 h-50">
-                                <div class="flex relative h-60" wire:click="showModal({{ $image }})">
+                                <div class="flex relative h-60" wire:click="$emit('showModal',{{ $image }})">
                                   <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="{{ asset('storage/images/' . $image->path) }}">
                                   <div class="px-8 py-10 relative z-10 w-full border-4 border-paleta-secundario bg-paleta-primario opacity-0 hover:opacity-90">
                                     <h2 class="tracking-widest text-sm title-font font-medium text-paleta-quinario mb-1">{{ $image->getTranslation('subtitle', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}</h2>
