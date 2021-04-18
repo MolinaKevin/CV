@@ -19,13 +19,14 @@ class Timeline extends Component
         'showModal'
     ];
 
-    public function mount() {
+    public function mount()
+    {
+        $this->screen = Screenshot::first();
         $this->active = Step::orderBy('init','DESC')->first()->id;
     }
 
     public function render()
     {
-        $this->screen = Screenshot::first();
         return view('curriculum.timeline',[
             'steps' => Step::orderBy('init','DESC')->get()
         ])->layout('layouts.cv');
