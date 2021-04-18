@@ -70,7 +70,7 @@
         </x-slot>
     </x-dialog-modal>
 
-    <x-dialog-modal wire:model="alert" maxWidth="md">
+    <x-jet-dialog-modal wire:model="alert" maxWidth="md">
         <x-slot name="title">
         </x-slot>
 
