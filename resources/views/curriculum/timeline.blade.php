@@ -30,7 +30,7 @@
     </div>
     <x-dialog-modal wire:model="modal" maxWidth="7xl">
         <x-slot name="title">
-            {{ $image->getTranslation('subtitle', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
+            {{ $screen->getTranslation('subtitle', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
         </x-slot>
 
         <x-slot name="content">
@@ -38,7 +38,7 @@
         </x-slot>
 
         <x-slot name="footer">
-            {!! $image->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
+            {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
 
         </x-slot>
     </x-dialog-modal>
