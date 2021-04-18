@@ -28,7 +28,7 @@
             @endforeach
         </div>
     </div>
-    <x-image-modal wire:model="modal" maxWidth="2xl">
+    <x-image-modal wire:model="modal" maxWidth="5xl">
         <x-slot name="title">
         </x-slot>
 
