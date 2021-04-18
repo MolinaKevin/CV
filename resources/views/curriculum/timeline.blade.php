@@ -37,9 +37,12 @@
         </x-slot>
 
         <x-slot name="footer">
-            {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
-            <br />
-            {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
+            <p class="2xl">
+                {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
+            <p/>
+            <p class="text-justify">
+                {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
+            </p>
 
         </x-slot>
     </x-dialog-modal>
