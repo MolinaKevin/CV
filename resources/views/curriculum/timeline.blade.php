@@ -34,7 +34,7 @@
         </x-slot>
 
         <x-slot name="content">
-		    <img src="{{ asset($screen->path) }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+		    <img src="{{ asset('storage/images/' . $image->path) }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
         </x-slot>
 
         <x-slot name="footer">
