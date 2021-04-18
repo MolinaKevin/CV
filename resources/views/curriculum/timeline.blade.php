@@ -28,16 +28,17 @@
             @endforeach
         </div>
     </div>
-    <x-image-modal wire:model="modal" maxWidth="7xl">
+    <x-image-modal wire:model="modal" maxWidth="2xl">
         <x-slot name="title">
         </x-slot>
 
         <x-slot name="content">
-		    <img src="{{ asset('storage/images/' . $screen->path) }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+		    <img src="{{ asset('storage/images/' . $screen->path) }}" class="rounded-none shadow-2xl hidden lg:block">
         </x-slot>
 
         <x-slot name="footer">
             {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
+            <br />
             {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
 
         </x-slot>
