@@ -25,6 +25,7 @@ class Timeline extends Component
 
     public function render()
     {
+        $this->screen = Screenshot::first();
         return view('curriculum.timeline',[
             'steps' => Step::orderBy('init','DESC')->get()
         ])->layout('layouts.cv');
