@@ -6,7 +6,7 @@
             {{ $title }}
         </div>
 
-        <div class="mt-4">
+        <div class="">
             {{ $content }}
         </div>
     </div>
