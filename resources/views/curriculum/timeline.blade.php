@@ -28,4 +28,17 @@
             @endforeach
         </div>
     </div>
+    <x-dialog-modal wire:model="modal" maxWidth="7xl">
+        <x-slot name="title">
+            {{ __('Enviame un mail') }}
+        </x-slot>
+
+        <x-slot name="content">
+		    <img src="{{ asset('storage/images/yo.jfif') }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+        </x-slot>
+
+        <x-slot name="footer">
+
+        </x-slot>
+    </x-dialog-modal>
 </div>
