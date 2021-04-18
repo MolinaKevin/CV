@@ -1,4 +1,4 @@
-<div class="flex items-center h-auto lg:h-full flex-wrap mx-auto my-32 lg:my-32">
+<div class="flex items-center h-auto lg:h-full flex-wrap mx-auto my-16 lg:my-32">
 
 	<!--Main Col-->
 	<div id="profile" class="w-full lg:w-2/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-paleta-primario  mx-2 lg:mx-0">
