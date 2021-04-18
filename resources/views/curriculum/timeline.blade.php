@@ -37,7 +37,7 @@
         </x-slot>
 
         <x-slot name="footer">
-            <p class="2xl">
+            <p class="text-2xl text-left">
                 {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
             <p/>
             <p class="text-justify">
