@@ -62,19 +62,21 @@
 
 	</div>
 
-    <x-dialog-modal wire:model="modal" maxWidth="7xl">
-        <x-slot name="title">
-            {{ __('Enviame un mail') }}
-        </x-slot>
+    @if($modal)
+        <x-dialog-modal wire:model="modal" maxWidth="7xl">
+            <x-slot name="title">
+                {{ __('Enviame un mail') }}
+            </x-slot>
 
-        <x-slot name="content">
-            <livewire:contact />
-        </x-slot>
+            <x-slot name="content">
+                <livewire:contact :key="'contact-modal'" />
+            </x-slot>
 
-        <x-slot name="footer">
+            <x-slot name="footer">
 
-        </x-slot>
-    </x-dialog-modal>
+            </x-slot>
+        </x-dialog-modal>
+    @endif
 
     <x-jet-dialog-modal wire:model="alert" maxWidth="md">
         <x-slot name="title">
