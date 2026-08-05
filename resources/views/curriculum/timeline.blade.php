@@ -61,6 +61,16 @@
         box-shadow: 0 12px 28px rgba(0, 25, 70, .12);
     }
 
+    .cv-timeline-card--collapsible {
+        cursor: pointer;
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .cv-timeline-card--collapsible:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 32px rgba(0, 25, 70, .18);
+    }
+
     .cv-timeline-card::before {
         content: '';
         position: absolute;
@@ -110,21 +120,18 @@
         @foreach($steps as $step)
             <article class="cv-timeline-item js-show-on-scroll">
                 <div class="cv-timeline-meta">
-                    <span class="block font-semibold title-font text-paleta-secundario">{!! $stepValue($step, 'place') !!}</span>
-                    <span class="mt-1 block text-paleta-secundario opacity-75 text-sm">{{ $step->begin }} - {{ $step->finish }}</span>
+                    <span class="block font-semibold title-font text-paleta-secundario">{{ $step->begin }} - {{ $step->finish }}</span>
                 </div>
                 <span class="cv-timeline-marker" aria-hidden="true"></span>
-                <div class="cv-timeline-card">
-                    <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
+                <div
+                    class="cv-timeline-card {{ $active != $step->id ? 'cv-timeline-card--collapsible' : '' }}"
                     @if($active != $step->id)
-                        <p class="leading-relaxed text-paleta-secundario text-justify">{!! $stepValue($step, 'description') !!}</p>
-                        <a wire:click="$emit('timelineSelect',{{ $step->id }})" class="text-paleta-secundario inline-flex items-center mt-4 cursor-pointer">{{ __('Leer mas') }}
-                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    @else
+                        wire:click="$emit('timelineSelect',{{ $step->id }})"
+                    @endif
+                >
+                    <h2 class="text-2xl font-medium text-paleta-secundario title-font {{ $active == $step->id ? 'mb-2' : '' }}">{!! $stepValue($step, 'place') !!}</h2>
+                    @if($active == $step->id)
+                        <p class="font-semibold text-paleta-cuaternario mb-4">{!! $stepValue($step, 'title') !!}</p>
                         <livewire:experience :step="$active" />
                     @endif
                 </div>

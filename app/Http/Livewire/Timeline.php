@@ -11,7 +11,7 @@ class Timeline extends Component
 
     public $more = false;
     public $modal = false;
-    public $active = 16;
+    public $active = null;
     public $screen;
 
     protected $listeners = [
@@ -22,7 +22,6 @@ class Timeline extends Component
     public function mount()
     {
         $this->screen = Screenshot::first();
-        $this->active = Step::orderBy('init','DESC')->first()->id;
     }
 
     public function render()
