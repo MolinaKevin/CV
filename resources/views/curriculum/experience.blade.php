@@ -3,13 +3,16 @@
     $boxLabel = function ($box) use ($locale) {
         return $box->getTranslation('name', $locale, false) ?: $box->getRawOriginal('name');
     };
+    $boxContent = function ($box) use ($locale) {
+        return $box->getTranslation('content', $locale, false) ?: $box->getRawOriginal('content');
+    };
 @endphp
 
 <section class="body-font">
     <div class="flex flex-col text-center w-full pb-2">
         @switch($selected->type)
             @case(1)
-                <p class="lg:w-100 mx-auto text-justify leading-relaxed text-paleta-secundario">{!! $selected->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</p>
+                <p class="lg:w-100 mx-auto text-justify leading-relaxed text-paleta-secundario">{!! $boxContent($selected) !!}</p>
                 @break
             @case(2)
                 <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
@@ -24,14 +27,19 @@
                 </div>
                 @break
             @case(3)
-                <div class="h-100 bg-gray-300 rounded-lg overflow-hidden p-10 py-56 pb-2 pl-28 flex items-end justify-start relative">
-                  <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q={!! $selected->content !!}&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
-                  <div class="bg-white relative flex flex-wrap py-8 rounded shadow-md">
-                    <div class="px-20">
-                      <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
-                      <p class="mt-1">{!! $selected->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</p>
-                    </div>
-                  </div>
+                @php($location = trim(strip_tags($boxContent($selected))))
+                <div class="rounded-lg border-2 border-paleta-cuaternario bg-paleta-primario p-10 text-center">
+                    <i class="fas fa-map-marker-alt fa-3x text-paleta-cuaternario mb-4"></i>
+                    <h2 class="title-font font-semibold text-paleta-secundario tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
+                    <p class="mt-2 text-paleta-secundario">{{ $location }}</p>
+                    <a
+                        class="inline-flex mt-5 items-center text-paleta-cuaternario hover:text-paleta-secundario font-semibold"
+                        href="https://www.google.com/maps/search/?api=1&amp;query={{ rawurlencode($location) }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver en Google Maps <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
                 </div>
                 @break
             @case(4)
