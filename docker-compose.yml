@@ -1,63 +1,105 @@
-version: "3.7"
 services:
   app:
     build:
+      context: .
+      dockerfile: Dockerfile
       args:
         user: cv
         uid: 1000
-      context: ./
-      dockerfile: Dockerfile
-    image: cv
+
+    image: cv-app
     container_name: cv-app
     restart: unless-stopped
-    working_dir: /var/www/
+
+    working_dir: /var/www
+
+    env_file:
+      - .env
+
     volumes:
       - ./:/var/www
+
+    depends_on:
+      db:
+        condition: service_healthy
+
     networks:
       - cv
+
 
   db:
     image: mysql:8.0
     container_name: cv-db
     restart: unless-stopped
+
     environment:
-      MYSQL_DATABASE: cv
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_PASSWORD: password
-      MYSQL_USER: kevin
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      MYSQL_DATABASE: ${DB_DATABASE:-cv}
+      MYSQL_USER: ${DB_USERNAME:-kevin}
+      MYSQL_PASSWORD: ${DB_PASSWORD} 
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD} 
+
     volumes:
-      - ./docker/mysql:/docker-entrypoint-initdb.d
+      - cv-db-data:/var/lib/mysql
+      - ./docker/mysql:/docker-entrypoint-initdb.d:ro
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
     networks:
       - cv
+
 
   adminer:
-    image: adminer
+    image: adminer:latest
     container_name: cv-adminer
     restart: unless-stopped
+
     ports:
-      - 8080:8080
-    links:
-      - db:db
+      - "127.0.0.1:8080:8080"
+
+    depends_on:
+      - db
+
     networks:
       - cv
 
+
   nginx:
-    image: nginx:1.19-alpine
+    image: nginx:1.27-alpine
     container_name: cv-nginx
     restart: unless-stopped
-    ports:
-      - 8000:80
+
     volumes:
-      - ./:/var/www
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf # Archivo principal personalizado
-#      - ./docker/nginx/conf.d:/etc/nginx/conf.d         # Configuraciones adicionales
+      - ./:/var/www:ro
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./logs/nginx:/var/log/nginx
+
     depends_on:
       - app
+
+    expose:
+      - "80"
+
     networks:
       - cv
+      - web
+
+
 networks:
   cv:
     driver: bridge
+
+  web:
+    external: true
+
+
+volumes:
+  cv-db-data:
