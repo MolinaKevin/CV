@@ -59,9 +59,6 @@
         <a href="https://es.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 mr-2 md:mt-0">
             ES
         </a>
-        <a href="https://en.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 mr-2 md:mt-0">
-            EN
-        </a>
         <a href="https://de.molinakev.in" class="inline-flex items-center bg-paleta-secundario border-0 py-1 px-3 focus:outline-none hover:bg-paleta-cuaternario rounded text-paleta-primario mt-4 md:mt-0">
             DE
         </a>
