@@ -39,7 +39,7 @@
                     <div class="flex flex-wrap -m-4">
                         @foreach($selected->screenshots as $image)
                             <div class="lg:w-1/3 sm:w-1/2 p-4 h-50">
-                                <div class="flex relative h-60 cursor-pointer" wire:click="$emit('showModal',{{ $image }})">
+                                <div class="flex relative h-60 cursor-pointer" wire:click.stop="$emit('showModal',{{ $image }})">
                                   <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="{{ asset('storage/images/' . $image->path) }}">
                                   <div class="px-8 py-10 relative z-10 w-full border-4 border-paleta-secundario bg-paleta-primario opacity-0 hover:opacity-90">
                                     <h2 class="tracking-widest text-sm title-font font-medium text-paleta-quinario mb-1">{{ $image->getTranslation('subtitle', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}</h2>
@@ -86,7 +86,7 @@
                 wire:key="experience-box-{{ $box->id }}"
                 class="px-6 py-3 text-sm justify-center title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-secundario text-paleta-primario bg-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario '  }} hover:text-paleta-primario hover:bg-paleta-cuaternario tracking-wider cursor-pointer md:px-12 lg:text-base"
                 style="width: {{ 100 / max($count, 1) }}%;"
-                wire:click="changeBox({{ $box->id }})"
+                wire:click.stop="changeBox({{ $box->id }})"
             >
                 <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
                 <span class="uppercase">{!! $boxLabel($box) !!}</span>

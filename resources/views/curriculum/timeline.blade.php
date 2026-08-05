@@ -125,9 +125,7 @@
                 <span class="cv-timeline-marker" aria-hidden="true"></span>
                 <div
                     class="cv-timeline-card {{ $active != $step->id ? 'cv-timeline-card--collapsible' : '' }}"
-                    @if($active != $step->id)
-                        wire:click="showMore({{ $step->id }})"
-                    @endif
+                    wire:click="showMore({{ $step->id }})"
                 >
                     <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
                     <p class="font-semibold text-paleta-cuaternario {{ $active == $step->id ? 'mb-4' : '' }}">{!! $stepValue($step, 'place') !!}</p>
