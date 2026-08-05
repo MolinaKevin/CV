@@ -38,6 +38,108 @@ class UpdateProfessionalTimeline extends Migration
                 ]);
         }
 
+        $timelineEntries = [
+            [
+                'key' => 'education-utn-2011',
+                'init' => '2011-01-01',
+                'end' => '2016-12-31',
+                'title' => [
+                    'es' => 'Ingeniería en Sistemas',
+                    'de' => 'Systemingenieurwesen',
+                ],
+                'description' => [
+                    'es' => 'Formación universitaria en sistemas e ingeniería de software.',
+                    'de' => 'Universitäre Ausbildung in Systemen und Software Engineering.',
+                ],
+                'place' => [
+                    'es' => 'Universidad Tecnológica Nacional, La Plata, Argentina',
+                    'de' => 'Universidad Tecnológica Nacional, La Plata, Argentinien',
+                ],
+            ],
+            [
+                'key' => 'felp-joven-2016',
+                'init' => '2016-01-01',
+                'end' => '2017-12-31',
+                'title' => [
+                    'es' => 'Cofundador y miembro de comisión — FELP Joven',
+                    'de' => 'Mitgründer und Kommissionsmitglied — FELP Joven',
+                ],
+                'description' => [
+                    'es' => 'Integrante del grupo fundador y de la comisión organizadora de una iniciativa orientada a fortalecer el vínculo entre jóvenes, emprendimientos y la comunidad.',
+                    'de' => 'Mitglied der Gründungsgruppe und Organisationskommission einer Initiative zur Stärkung des Austauschs zwischen jungen Menschen, Unternehmertum und Gemeinschaft.',
+                ],
+                'place' => [
+                    'es' => 'FELP Joven, La Plata, Argentina',
+                    'de' => 'FELP Joven, La Plata, Argentinien',
+                ],
+            ],
+            [
+                'key' => 'education-goettingen-2021',
+                'init' => '2021-01-01',
+                'end' => '2024-12-31',
+                'title' => [
+                    'es' => 'Informática aplicada — foco en neuroinformática',
+                    'de' => 'Angewandte Informatik — Schwerpunkt Neuroinformatik',
+                ],
+                'description' => [
+                    'es' => 'Formación en informática aplicada con foco en neuroinformática.',
+                    'de' => 'Ausbildung in Angewandter Informatik mit Schwerpunkt Neuroinformatik.',
+                ],
+                'place' => [
+                    'es' => 'Georg-August-Universität Göttingen, Alemania',
+                    'de' => 'Georg-August-Universität Göttingen, Deutschland',
+                ],
+            ],
+            [
+                'key' => 'education-potsdam-2025',
+                'init' => '2025-01-01',
+                'end' => '1950-01-01',
+                'title' => [
+                    'es' => 'Informática / Computational Science',
+                    'de' => 'Informatik / Computational Science',
+                ],
+                'description' => [
+                    'es' => 'Formación actual en Informática y Computational Science.',
+                    'de' => 'Aktuelles Studium in Informatik und Computational Science.',
+                ],
+                'place' => [
+                    'es' => 'Universität Potsdam, Alemania',
+                    'de' => 'Universität Potsdam, Deutschland',
+                ],
+            ],
+        ];
+
+        foreach ($timelineEntries as $entry) {
+            if (DB::table('steps')->where('key', $entry['key'])->doesntExist()) {
+                $stepId = DB::table('steps')->insertGetId([
+                    'init' => $entry['init'],
+                    'end' => $entry['end'],
+                    'title' => json_encode($entry['title']),
+                    'description' => json_encode($entry['description']),
+                    'place' => json_encode($entry['place']),
+                    'key' => $entry['key'],
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ]);
+
+                DB::table('boxes')->insert([
+                    'name' => json_encode([
+                        'es' => 'Descripción',
+                        'de' => 'Beschreibung',
+                    ]),
+                    'icon' => 'fas fa-align-center',
+                    'type' => 1,
+                    'content' => json_encode([
+                        'es' => '<p>' . $entry['description']['es'] . '</p>',
+                        'de' => '<p>' . $entry['description']['de'] . '</p>',
+                    ]),
+                    'step_id' => $stepId,
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ]);
+            }
+        }
+
         DB::table('steps')
             ->where('place', 'Maschinenhandel Meyer')
             ->update([

@@ -182,5 +182,3 @@
     </script>
 
 </div>
-
-@include('curriculum.professional-profile')
