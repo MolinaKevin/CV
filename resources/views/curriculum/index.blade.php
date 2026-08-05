@@ -111,10 +111,6 @@
             var i = this.loopNum % this.toRotate.length;
             var technology = this.toRotate[i] || {};
             var lang = "{{ app()->getLocale() }}";
-            console.log("lang: " + lang);
-
-    console.log('session locale: @json(Session::get("locale"))');
-    console.log('app locale: @json(App::getLocale())');
             var prefixes = technology.agregar || {};
             var addTxt = typeof prefixes === 'object'
                 ? (prefixes[lang] || prefixes.es || prefixes.de || '')
@@ -163,7 +159,6 @@
             //var toRotate = elements[i].getAttribute('data-rotate');
             var period = elements[i].getAttribute('data-period');
             var toRotate = {!! $techs !!};
-            console.log(toRotate);
             if (toRotate) {
                     new TxtRotate(elements[i], toRotate, period);
             }
