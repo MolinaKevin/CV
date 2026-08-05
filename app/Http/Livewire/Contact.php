@@ -6,7 +6,7 @@ use App\Mail\ContactEmail;
 use App\Mail\OfferEmail;
 use Livewire\Component;
 use Mail;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 
 class Contact extends Component
 {
@@ -31,28 +31,31 @@ class Contact extends Component
 
     public function contactSubmit()
     {
-        $contact = $this->validate();
-        $this->emit('showAlert');
+        $this->validate();
 
         $email = new \stdClass();
         $email->message = $this->message;
         $email->sender = $this->name;
+        $email->senderEmail = $this->email;
         $email->subject = $this->subject;
 
-        // Mail for sender
-        Mail::to($this->email)
-            ->cc('i@molinakev.in')
-            ->send(new ContactEmail($email));
-        // Mail for me
-        Mail::to($this->to)
-            ->send(new OfferEmail($email));
+        try {
+            // Confirmación para quien escribió y notificación para Kevin.
+            Mail::to($this->email)->send(new ContactEmail($email));
+            Mail::to($this->to)->send(new OfferEmail($email));
+        } catch (\Throwable $exception) {
+            Log::error('No se pudo enviar el mensaje del formulario de contacto.', [
+                'exception' => $exception,
+            ]);
 
-        if( Session::has('status') ) {
-            $this->emit('message', __('Hubo un error inesperado. Si lo desea puede ponerse en contacto conmigo a traves de mi mail i@molinakev.in'));
-        } else {
-            $this->emit('message', __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.'));
+            $this->emit('message', __('No pude enviar el mensaje en este momento. Podés escribirme directamente a i@molinakev.in.'));
+            $this->emit('showAlert');
+
+            return;
         }
 
+        $this->emit('message', __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.'));
+        $this->emit('showAlert');
         $this->clearFields();
     }
 

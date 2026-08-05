@@ -34,9 +34,10 @@ class OfferEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('i@molinakev.in')
-                    ->view('mails.contact')
-                    ->text('mails.contact_plain')
-                    ->subject(__('Respuesta automatica'));
+        return $this->from(config('mail.from.address'), config('mail.from.name'))
+                    ->replyTo($this->email->senderEmail, $this->email->sender)
+                    ->view('mails.offer')
+                    ->text('mails.offer_plain')
+                    ->subject($this->email->subject);
     }
 }
