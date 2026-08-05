@@ -118,7 +118,7 @@
 
     <div class="cv-timeline">
         @foreach($steps as $step)
-            <article class="cv-timeline-item js-show-on-scroll">
+            <article wire:key="timeline-step-{{ $step->id }}" class="cv-timeline-item js-show-on-scroll">
                 <div class="cv-timeline-meta">
                     <span class="block font-semibold title-font text-paleta-secundario">{{ $step->begin }} - {{ $step->finish }}</span>
                 </div>
@@ -129,10 +129,14 @@
                         wire:click="showMore({{ $step->id }})"
                     @endif
                 >
-                    <h2 class="text-2xl font-medium text-paleta-secundario title-font {{ $active == $step->id ? 'mb-2' : '' }}">{!! $stepValue($step, 'place') !!}</h2>
                     @if($active == $step->id)
-                        <p class="font-semibold text-paleta-cuaternario mb-4">{!! $stepValue($step, 'title') !!}</p>
-                        <livewire:experience :step="$active" :key="'experience-' . $active" />
+                        <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
+                        <p class="font-semibold text-paleta-cuaternario mb-4">{!! $stepValue($step, 'place') !!}</p>
+                        <div wire:key="timeline-experience-{{ $step->id }}">
+                            <livewire:experience :step="$active" :key="'experience-' . $active" />
+                        </div>
+                    @else
+                        <h2 class="text-2xl font-medium text-paleta-secundario title-font">{!! $stepValue($step, 'place') !!}</h2>
                     @endif
                 </div>
             </article>
