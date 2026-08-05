@@ -45,5 +45,5 @@
             </p>
 
         </x-slot>
-    </x-dialog-modal>
+    </x-image-modal>
 </div>

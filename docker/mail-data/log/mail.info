@@ -1,0 +1,4 @@
+Jan 18 12:54:24 mail dovecot: master: Dovecot v2.3.14 (cee3cbc0d) starting up for imap, pop3, lmtp, sieve
+Jan 18 14:04:04 mail dovecot: master: Warning: Killed with signal 15 (by pid=710 uid=0 code=kill)
+Jan 18 14:04:44 mail dovecot: master: Dovecot v2.3.14 (cee3cbc0d) starting up for imap, pop3, lmtp, sieve
+Jan 18 14:12:38 mail dovecot: master: Dovecot v2.3.14 (cee3cbc0d) starting up for imap, pop3, lmtp, sieve

@@ -53,7 +53,7 @@ Route::domain('de.molinakev.in')->middleware(['locale:de'])->group(function () {
     Route::get('/timeline',Timeline::class);
 });
 
-Route::middleware(['locale'])->get('/',Index::class)->name('index');
+Route::middleware(['locale:es'])->get('/',Index::class)->name('index');
 
 Route::get('/skills',Curriculum::class)->name('skills');
 

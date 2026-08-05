@@ -1,0 +1,47 @@
+2021-03-19 23:31:39,439:DEBUG:certbot._internal.main:certbot version: 1.13.0
+2021-03-19 23:31:39,440:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2021-03-19 23:31:39,440:DEBUG:certbot._internal.main:Arguments: ['--webroot-path=/usr/share/nginx/html/letsencrypt', '--email', 'molinakevinalejandro@gmail.com', '--agree-tos', '--no-eff-email', '-d', 'molinakev.in']
+2021-03-19 23:31:39,440:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2021-03-19 23:31:39,454:DEBUG:certbot._internal.log:Root logging level set at 20
+2021-03-19 23:31:39,454:INFO:certbot._internal.log:Saving debug log to /var/log/letsencrypt/letsencrypt.log
+2021-03-19 23:31:39,455:DEBUG:certbot._internal.plugins.selection:Requested authenticator None and installer None
+2021-03-19 23:31:39,463:DEBUG:certbot._internal.plugins.selection:Multiple candidate plugins: * standalone
+Description: Spin up a temporary webserver
+Interfaces: IAuthenticator, IPlugin
+Entry point: standalone = certbot._internal.plugins.standalone:Authenticator
+Initialized: <certbot._internal.plugins.standalone.Authenticator object at 0x7fe2cdfd26a0>
+Prep: True
+
+* webroot
+Description: Place files in webroot directory
+Interfaces: IAuthenticator, IPlugin
+Entry point: webroot = certbot._internal.plugins.webroot:Authenticator
+Initialized: <certbot._internal.plugins.webroot.Authenticator object at 0x7fe2cdfd6070>
+Prep: True
+2021-03-19 23:31:39,464:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/local/bin/certbot", line 11, in <module>
+    load_entry_point('certbot', 'console_scripts', 'certbot')()
+  File "/opt/certbot/src/certbot/certbot/main.py", line 15, in main
+    return internal_main.main(cli_args)
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1421, in main
+    return config.func(config, plugins)
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1279, in certonly
+    installer, auth = plug_sel.choose_configurator_plugins(config, plugins, "certonly")
+  File "/opt/certbot/src/certbot/certbot/_internal/plugins/selection.py", line 227, in choose_configurator_plugins
+    authenticator = pick_authenticator(config, req_auth, plugins)
+  File "/opt/certbot/src/certbot/certbot/_internal/plugins/selection.py", line 37, in pick_authenticator
+    return pick_plugin(
+  File "/opt/certbot/src/certbot/certbot/_internal/plugins/selection.py", line 110, in pick_plugin
+    plugin_ep = choose_plugin(list(prepared.values()), question)
+  File "/opt/certbot/src/certbot/certbot/_internal/plugins/selection.py", line 150, in choose_plugin
+    code, index = disp.menu(question, opts, force_interactive=True)
+  File "/opt/certbot/src/certbot/certbot/display/util.py", line 187, in menu
+    code, selection = self._get_valid_int_ans(len(choices))
+  File "/opt/certbot/src/certbot/certbot/display/util.py", line 445, in _get_valid_int_ans
+    ans = input_with_timeout(input_msg)
+  File "/opt/certbot/src/certbot/certbot/display/util.py", line 97, in input_with_timeout
+    raise EOFError
+EOFError
+2021-03-19 23:31:39,465:ERROR:certbot._internal.log:An unexpected error occurred:
+2021-03-19 23:31:39,465:ERROR:certbot._internal.log:EOFError

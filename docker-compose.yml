@@ -1,11 +1,10 @@
-version: '3.8'
-
+version: "3.7"
 services:
   app:
     build:
       args:
-        user: www-data
-        uid: 33
+        user: cv
+        uid: 1000
       context: ./
       dockerfile: Dockerfile
     image: cv
@@ -14,8 +13,6 @@ services:
     working_dir: /var/www/
     volumes:
       - ./:/var/www
-    environment:
-      - COMPOSER_MEMORY_LIMIT=-1
     networks:
       - cv
 
@@ -25,8 +22,8 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: cv
-      MYSQL_ROOT_PASSWORD: 6ud6iSbV64miJKa3GjyhcL99V46u
-      MYSQL_PASSWORD: 6ud6iSbV64miJKa3GjyhcL99V46u
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
       MYSQL_USER: kevin
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
@@ -46,55 +43,21 @@ services:
     networks:
       - cv
 
-  certbot:
-    image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email molinakevinalejandro@gmail.com --agree-tos --no-eff-email -d molinakev.in -d www.molinakev.in -d es.molinakev.in -d en.molinakev.in -d de.molinakev.in
-    volumes:
-      - ./docker/certbot/conf:/etc/letsencrypt
-      - ./docker/certbot/logs:/var/log/letsencrypt
-      - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
-
   nginx:
-    image: mbarthelemy/nginx-geoip
+    image: nginx:1.19-alpine
+    container_name: cv-nginx
     restart: unless-stopped
     ports:
-      - 80:80
-      - 443:443
+      - 8000:80
     volumes:
-      - ./:/var/www:ro
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/dhparam:/etc/nginx/dhparam
-      - ./docker/certbot/conf:/etc/nginx/ssl
-      - ./docker/certbot/data:/usr/share/nginx/html/letsencrypt
+      - ./:/var/www
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf # Archivo principal personalizado
+#      - ./docker/nginx/conf.d:/etc/nginx/conf.d         # Configuraciones adicionales
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - app
     networks:
       - cv
-
-  mailserver:
-    image: dirtsimple/poste.io
-    restart: unless-stopped
-    ports:
-      - 25:25
-      - 1080:80
-      - 1443:443
-      - 110:110
-      - 143:143
-      - 587:587
-      - 993:993
-      - 995:995
-      - 4190:4190
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./docker/mail-data/:/data
-    environment:
-      - HTTPS=ON
-      - VIRTUAL_HOST=mail.molinakev.in
-      - DISABLE_CLAMAV=TRUE
-    hostname: mail.molinakev.in
-    networks:
-      - cv
-#    network_mode: host
-
 networks:
   cv:
     driver: bridge

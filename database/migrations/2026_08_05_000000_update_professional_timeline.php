@@ -1,0 +1,104 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
+class UpdateProfessionalTimeline extends Migration
+{
+    public function up()
+    {
+        $now = now();
+
+        $somos = DB::table('steps')->where('place', 'SOMOS')->first();
+
+        if ($somos) {
+            DB::table('steps')
+                ->where('id', $somos->id)
+                ->update([
+                    'title' => json_encode([
+                        'es' => 'Cofundador y desarrollador',
+                        'de' => 'Mitgründer & Entwickler',
+                    ]),
+                    'description' => json_encode([
+                        'es' => 'SOMOS es una red regional que conecta consumidores, comercios locales y organizaciones sin fines de lucro. A través de una app y un sistema de puntos, cada compra fortalece la economía local y genera un impacto social transparente.',
+                        'de' => 'SOMOS ist ein regionales Netzwerk, das Verbraucher:innen, lokale Geschäfte und Non-Profits verbindet. Über eine App und ein Punktesystem stärkt jeder Einkauf die lokale Wirtschaft und schafft transparenten sozialen Mehrwert.',
+                    ]),
+                    'updated_at' => $now,
+                ]);
+
+            DB::table('boxes')
+                ->where('step_id', $somos->id)
+                ->where('type', 1)
+                ->update([
+                    'content' => json_encode([
+                        'es' => '<p>SOMOS hace visible una red de comercios regionales y organizaciones sin fines de lucro mediante un mapa con filtros y sellos como regional, bio o comercio justo.</p><p>Las personas compran como siempre, sin pagar un extra, y reciben puntos que pueden canjear en cualquier comercio de la red. Un punto equivale a 0,01 €.</p><p>Los comercios aportan una tarifa de servicio del 3 % por transacción como gasto operativo. SOMOS la distribuye de manera transparente:</p><ul><li>50 % en puntos para las personas usuarias.</li><li>10 % para organizaciones sin fines de lucro locales.</li><li>40 % para el funcionamiento y desarrollo de la plataforma.</li></ul><p>De esta manera, el programa de fidelización de los comercios también financia proyectos regionales y fortalece un circuito económico local.</p>',
+                        'de' => '<p>SOMOS macht ein Netzwerk regionaler Geschäfte und Non-Profits über eine Karte mit Filtern und Siegeln wie regional, bio oder fair sichtbar.</p><p>Mitglieder kaufen wie gewohnt und ohne Aufpreis ein. Sie erhalten Punkte, die sie in jedem SOMOS-Geschäft im Netzwerk einlösen können. Ein Punkt entspricht 0,01 €.</p><p>Die Geschäfte zahlen eine Servicegebühr von 3 % pro Transaktion als reguläre Betriebsausgabe. SOMOS verteilt sie transparent:</p><ul><li>50 % als Punkte für Mitglieder.</li><li>10 % an lokale Non-Profits.</li><li>40 % für Betrieb und Weiterentwicklung der Plattform.</li></ul><p>So finanziert das Loyalty-Programm der Geschäfte zugleich regionale Projekte und stärkt einen lokalen Wirtschaftskreislauf.</p>',
+                    ]),
+                    'updated_at' => $now,
+                ]);
+        }
+
+        DB::table('steps')
+            ->where('place', 'Maschinenhandel Meyer')
+            ->update([
+                'end' => '2020-12-31',
+                'title' => json_encode([
+                    'es' => 'Desarrollador de software y administrador IT',
+                    'de' => 'Softwareentwickler & IT-Administrator',
+                ]),
+                'description' => json_encode([
+                    'es' => 'Desarrollo de soluciones internas, mantenimiento de servidores y redes, y modernización de sistemas existentes.',
+                    'de' => 'Entwicklung interner Lösungen, Betreuung von Server- und Netzwerkinfrastruktur sowie Modernisierung bestehender Systeme.',
+                ]),
+                'updated_at' => $now,
+            ]);
+
+        if (DB::table('steps')->where('key', 'umg-2020')->doesntExist()) {
+            $stepId = DB::table('steps')->insertGetId([
+                'init' => '2020-01-01',
+                'end' => '1950-01-01',
+                'title' => json_encode([
+                    'es' => 'Site Reliability Engineer y Product Owner',
+                    'de' => 'Site Reliability Engineer & Product Owner',
+                ]),
+                'description' => json_encode([
+                    'es' => 'Responsable de infraestructura Linux y de sistemas productivos de investigación. Automatizo despliegues y procesos operativos, acompaño migraciones de Debian, implementé monitoreo centralizado con ELK Stack y coordino la hoja de ruta técnica entre IT, investigación y usuarios especializados.',
+                    'de' => 'Verantwortung für Linux-Infrastruktur und produktive Forschungssysteme. Automatisierung von Deployments und Betriebsprozessen, Begleitung von Debian-Migrationen, Einführung eines zentralen Monitorings mit ELK Stack sowie Koordination der technischen Roadmap zwischen IT, Forschung und Fachanwendern.',
+                ]),
+                'place' => json_encode([
+                    'es' => 'Universitätsmedizin Göttingen (UMG), Göttingen, Alemania',
+                    'de' => 'Universitätsmedizin Göttingen (UMG), Göttingen, Deutschland',
+                ]),
+                'key' => 'umg-2020',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
+
+            DB::table('boxes')->insert([
+                'name' => json_encode([
+                    'es' => 'Descripción',
+                    'de' => 'Beschreibung',
+                ]),
+                'icon' => 'fas fa-align-center',
+                'type' => 1,
+                'content' => json_encode([
+                    'es' => '<p>Responsable de una infraestructura creciente de servidores Linux y de sistemas productivos de investigación.</p><ul><li>Estandarización y automatización de despliegues, mantenimiento y procesos operativos con Bash, Cron y scripting.</li><li>Migración de varios sistemas a nuevas versiones de Debian, preservando la estabilidad en producción.</li><li>Implementación de monitoreo centralizado basado en ELK Stack.</li><li>Finalización y puesta en producción del portal de investigación Feasibility Explorer, utilizado a nivel europeo.</li></ul>',
+                    'de' => '<p>Verantwortung für eine wachsende Linux-Server-Infrastruktur und produktive Forschungssysteme.</p><ul><li>Standardisierung und Automatisierung von Deployments, Wartung und Service-Prozessen mit Bash, Cron und Skripting.</li><li>Migration mehrerer Systeme auf neue Debian-Releases bei Sicherstellung der Produktionsstabilität.</li><li>Einführung eines zentralen Monitorings auf Basis des ELK-Stacks.</li><li>Übernahme, Fertigstellung und produktive Inbetriebnahme des europaweit genutzten Forschungsportals Feasibility Explorer.</li></ul>',
+                ]),
+                'step_id' => $stepId,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
+        }
+    }
+
+    public function down()
+    {
+        $umgStep = DB::table('steps')->where('key', 'umg-2020')->first();
+
+        if ($umgStep) {
+            DB::table('boxes')->where('step_id', $umgStep->id)->delete();
+            DB::table('steps')->where('id', $umgStep->id)->delete();
+        }
+    }
+}

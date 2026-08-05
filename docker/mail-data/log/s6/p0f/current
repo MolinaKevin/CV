@@ -1,0 +1,36 @@
+2025-01-18 12:54:24.565708500  --- p0f 3.09b by Michal Zalewski <lcamtuf@coredump.cx> ---
+2025-01-18 12:54:24.565830500  
+2025-01-18 12:54:24.565888500  [+] Closed 1 file descriptor.
+2025-01-18 12:54:24.567608500  [+] Loaded 322 signatures from '/etc/p0f/p0f.fp'.
+2025-01-18 12:54:24.636893500  [+] Intercepting traffic on interface 'eth0'.
+2025-01-18 12:54:24.637176500  [+] Custom filtering rule enabled: dst port 25 [+VLAN]
+2025-01-18 12:54:24.637310500  [+] Listening on API socket '/tmp/.p0f_socket' (max 20 clients).
+2025-01-18 12:54:24.637893500  [+] Privileges dropped: uid 88, gid 8, root '/home/delivery'.
+2025-01-18 12:54:24.637898500  [+] Entered main event loop.
+2025-01-18 12:54:24.637907500  
+2025-01-18 14:04:04.787722500  
+2025-01-18 14:04:04.787740500  All done. Processed 0 packets.
+2025-01-18 14:04:44.864235500  --- p0f 3.09b by Michal Zalewski <lcamtuf@coredump.cx> ---
+2025-01-18 14:04:44.864467500  
+2025-01-18 14:04:44.864720500  [+] Closed 1 file descriptor.
+2025-01-18 14:04:44.872205500  [+] Loaded 322 signatures from '/etc/p0f/p0f.fp'.
+2025-01-18 14:04:44.936669500  [+] Intercepting traffic on interface 'eth0'.
+2025-01-18 14:04:44.937080500  [+] Custom filtering rule enabled: dst port 25 [+VLAN]
+2025-01-18 14:04:44.937291500  [+] Listening on API socket '/tmp/.p0f_socket' (max 20 clients).
+2025-01-18 14:04:44.938135500  [+] Privileges dropped: uid 88, gid 8, root '/home/delivery'.
+2025-01-18 14:04:44.938166500  [+] Entered main event loop.
+2025-01-18 14:04:44.938171500  
+2025-01-18 14:12:23.134126500  
+2025-01-18 14:12:23.134150500  All done. Processed 0 packets.
+2025-01-18 14:12:38.698399500  --- p0f 3.09b by Michal Zalewski <lcamtuf@coredump.cx> ---
+2025-01-18 14:12:38.698512500  
+2025-01-18 14:12:38.698606500  [+] Closed 1 file descriptor.
+2025-01-18 14:12:38.700567500  [+] Loaded 322 signatures from '/etc/p0f/p0f.fp'.
+2025-01-18 14:12:38.756474500  [+] Intercepting traffic on interface 'eth0'.
+2025-01-18 14:12:38.756955500  [+] Custom filtering rule enabled: dst port 25 [+VLAN]
+2025-01-18 14:12:38.757135500  [+] Listening on API socket '/tmp/.p0f_socket' (max 20 clients).
+2025-01-18 14:12:38.758049500  [+] Privileges dropped: uid 88, gid 8, root '/home/delivery'.
+2025-01-18 14:12:38.758069500  [+] Entered main event loop.
+2025-01-18 14:12:38.758074500  
+2025-01-18 14:31:43.860225500  
+2025-01-18 14:31:43.860245500  All done. Processed 0 packets.

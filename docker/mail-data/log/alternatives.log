@@ -1,0 +1,21 @@
+update-alternatives 2021-05-07 09:51:28: run with --quiet --install /usr/bin/pinentry pinentry /usr/bin/pinentry-curses 50 --slave /usr/share/man/man1/pinentry.1.gz pinentry.1.gz /usr/share/man/man1/pinentry-curses.1.gz
+update-alternatives 2021-05-07 09:51:28: link group pinentry updated to point to /usr/bin/pinentry-curses
+update-alternatives 2021-05-07 09:52:07: run with --install /usr/bin/editor editor /bin/nano 40 --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/nano.1.gz
+update-alternatives 2021-05-07 09:52:07: link group editor updated to point to /bin/nano
+update-alternatives 2021-05-07 09:52:07: run with --install /usr/bin/pico pico /bin/nano 10 --slave /usr/share/man/man1/pico.1.gz pico.1.gz /usr/share/man/man1/nano.1.gz
+update-alternatives 2021-05-07 09:52:07: link group pico updated to point to /bin/nano
+update-alternatives 2021-05-07 09:52:07: run with --install /usr/bin/w w /usr/bin/w.procps 50 --slave /usr/share/man/man1/w.1.gz w.1.gz /usr/share/man/man1/w.procps.1.gz
+update-alternatives 2021-05-07 09:52:07: link group w updated to point to /usr/bin/w.procps
+update-alternatives 2021-05-07 09:52:51: run with --install /bin/nc nc /bin/nc.openbsd 50 --slave /bin/netcat netcat /bin/nc.openbsd --slave /usr/share/man/man1/nc.1.gz nc.1.gz /usr/share/man/man1/nc_openbsd.1.gz --slave /usr/share/man/man1/netcat.1.gz netcat.1.gz /usr/share/man/man1/nc_openbsd.1.gz
+update-alternatives 2021-05-07 09:52:51: link group nc updated to point to /bin/nc.openbsd
+update-alternatives 2021-05-07 09:53:16: run with --install /usr/bin/php php /usr/bin/php7.3 73 --slave /usr/share/man/man1/php.1.gz php.1.gz /usr/share/man/man1/php7.3.1.gz
+update-alternatives 2021-05-07 09:53:16: link group php updated to point to /usr/bin/php7.3
+update-alternatives 2021-05-07 09:53:16: run with --install /usr/bin/phar phar /usr/bin/phar7.3 73 --slave /usr/share/man/man1/phar.1.gz phar.1.gz /usr/share/man/man1/phar7.3.1.gz
+update-alternatives 2021-05-07 09:53:16: link group phar updated to point to /usr/bin/phar7.3
+update-alternatives 2021-05-07 09:53:16: run with --install /usr/bin/phar.phar phar.phar /usr/bin/phar.phar7.3 73 --slave /usr/share/man/man1/phar.phar.1.gz phar.phar.1.gz /usr/share/man/man1/phar.phar7.3.1.gz
+update-alternatives 2021-05-07 09:53:16: link group phar.phar updated to point to /usr/bin/phar.phar7.3
+update-alternatives 2021-08-04 21:19:17: run with --quiet --install /usr/bin/pager pager /bin/less 77 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/less.1.gz
+update-alternatives 2021-08-04 21:19:17: link group pager updated to point to /bin/less
+update-alternatives 2021-08-04 21:19:17: run with --quiet --remove pager /usr/bin/less
+update-alternatives 2021-08-04 21:19:17: run with --quiet --install /usr/bin/pager pager /bin/less 77 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/less.1.gz
+update-alternatives 2021-08-04 21:19:17: run with --quiet --remove pager /usr/bin/less

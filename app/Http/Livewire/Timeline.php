@@ -42,4 +42,5 @@ class Timeline extends Component
         $this->screen = $screenshot;
         $this->modal = true;
     }
+
 }

@@ -1,0 +1,3 @@
+Jan 18 12:54:24 mail rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="749" x-info="https://www.rsyslog.com"] start
+Jan 18 14:04:44 mail rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="687" x-info="https://www.rsyslog.com"] start
+Jan 18 14:12:38 mail rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="703" x-info="https://www.rsyslog.com"] start
