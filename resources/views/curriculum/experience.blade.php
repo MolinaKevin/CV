@@ -1,3 +1,10 @@
+@php
+    $locale = \Session::get('locale') ? \Session::get('locale') : \App::getLocale();
+    $boxLabel = function ($box) use ($locale) {
+        return $box->getTranslation('name', $locale, false) ?: $box->getRawOriginal('name');
+    };
+@endphp
+
 <section class="body-font">
     <div class="flex flex-col text-center w-full pb-2">
         @switch($selected->type)
@@ -80,9 +87,8 @@
                 wire:click="$emit('changeBox',{{ $box->id }})"
             >
                 <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
-                <span class="uppercase">{!! $box->getTranslation('name', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}</span>
+                <span class="uppercase">{!! $boxLabel($box) !!}</span>
             </a>
         @endforeach
     </div>
 </section>
-

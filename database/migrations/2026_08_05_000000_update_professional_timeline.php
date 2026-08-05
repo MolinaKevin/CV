@@ -155,6 +155,47 @@ class UpdateProfessionalTimeline extends Migration
                 'updated_at' => $now,
             ]);
 
+        $umgTechnologies = [
+            ['name' => 'PHP', 'icon' => 'fab fa-php', 'es' => 'Desarrollador de', 'de' => 'Entwickler von'],
+            ['name' => 'Laravel', 'icon' => 'fab fa-laravel', 'es' => 'Siervo de', 'de' => 'Diener von'],
+            ['name' => 'Python', 'icon' => 'fab fa-python', 'es' => 'Aficionado a', 'de' => 'Fan von'],
+            ['name' => 'Javascript', 'icon' => 'fab fa-js', 'es' => 'Desarrollador de', 'de' => 'Entwickler von'],
+            ['name' => 'Java', 'icon' => 'fab fa-java', 'es' => 'Domador de', 'de' => 'Bändiger'],
+            ['name' => 'Spring Boot', 'icon' => 'fas fa-leaf', 'es' => 'Cultivador de', 'de' => 'Gärtner'],
+            ['name' => 'Node.js', 'icon' => 'fab fa-node-js', 'es' => 'Invocador de', 'de' => 'Beschwörer'],
+            ['name' => 'REST APIs', 'icon' => 'fas fa-plug', 'es' => 'Conector de', 'de' => 'Verbinder'],
+            ['name' => 'Dart', 'icon' => 'fas fa-bullseye', 'es' => 'Lanzador de', 'de' => 'Werfer'],
+            ['name' => 'Flutter', 'icon' => 'fas fa-feather', 'es' => 'Aleteador de', 'de' => 'Flatterer'],
+            ['name' => 'Docker', 'icon' => 'fab fa-docker', 'es' => 'Lacayo de', 'de' => 'Diener von'],
+            ['name' => 'Debian', 'icon' => 'fab fa-linux', 'es' => 'Habitante de', 'de' => 'Bewohner'],
+            ['name' => 'Podman', 'icon' => 'fas fa-box', 'es' => 'Pastor de', 'de' => 'Hirte'],
+            ['name' => 'GitLab CI/CD', 'icon' => 'fab fa-gitlab', 'es' => 'Orquestador de', 'de' => 'Dirigent'],
+            ['name' => 'Jenkins', 'icon' => 'fab fa-jenkins', 'es' => 'Compañero de', 'de' => 'Kollege von'],
+            ['name' => 'Traefik', 'icon' => 'fas fa-route', 'es' => 'Navegante de', 'de' => 'Navigator'],
+            ['name' => 'Apache', 'icon' => 'fas fa-server', 'es' => 'Invocador de', 'de' => 'Beschwörer'],
+            ['name' => 'ELK Stack', 'icon' => 'fas fa-search', 'es' => 'Rastreador de', 'de' => 'Spurenleser'],
+            ['name' => 'Bash', 'icon' => 'fas fa-terminal', 'es' => 'Habitante de', 'de' => 'Bewohner'],
+            ['name' => 'Linux', 'icon' => 'fab fa-linux', 'es' => 'Amigo de', 'de' => 'Freund von'],
+            ['name' => 'PostgreSQL', 'icon' => 'fas fa-database', 'es' => 'Colega de', 'de' => 'Kollege'],
+            ['name' => 'MySQL', 'icon' => 'fas fa-database', 'es' => 'Colega de', 'de' => 'Kollege'],
+            ['name' => 'MariaDB', 'icon' => 'fas fa-database', 'es' => 'Colega de', 'de' => 'Kollege'],
+            ['name' => 'SQLite', 'icon' => 'fas fa-database', 'es' => 'Colega de', 'de' => 'Kollege'],
+            ['name' => 'Svelte', 'icon' => 'fas fa-fire', 'es' => 'Entusiasta de', 'de' => 'Enthusiast'],
+            ['name' => 'Typescript', 'icon' => 'fas fa-code', 'es' => 'Aprendiz de', 'de' => 'Lehrling von'],
+            ['name' => 'Vue JS', 'icon' => 'fab fa-vuejs', 'es' => 'Enamorado de', 'de' => 'Fan von'],
+            ['name' => 'React', 'icon' => 'fab fa-react', 'es' => 'Conversador con', 'de' => 'Gesprächspartner von'],
+            ['name' => 'Angular', 'icon' => 'fab fa-angular', 'es' => 'Habitante de', 'de' => 'Bewohner'],
+            ['name' => 'Livewire', 'icon' => 'fas fa-bolt', 'es' => 'Electrificador de', 'de' => 'Elektriker von'],
+            ['name' => 'C#', 'icon' => 'fas fa-code', 'es' => 'Desarrollador de', 'de' => 'Entwickler von'],
+            ['name' => '.NET', 'icon' => 'fab fa-microsoft', 'es' => 'Compañero de', 'de' => 'Kollege von'],
+            ['name' => 'Delphi', 'icon' => 'fas fa-landmark', 'es' => 'Arqueólogo de', 'de' => 'Archäologe von'],
+            ['name' => 'Google Cloud Platform', 'icon' => 'fab fa-google', 'es' => 'Turista de', 'de' => 'Tourist bei'],
+            ['name' => 'AWS', 'icon' => 'fab fa-aws', 'es' => 'Turista de', 'de' => 'Tourist bei'],
+            ['name' => 'Raspberry Pi', 'icon' => 'fab fa-raspberry-pi', 'es' => 'Amigo de', 'de' => 'Freund von'],
+            ['name' => 'Git', 'icon' => 'fab fa-git-alt', 'es' => 'Camarada de', 'de' => 'Kamerad von'],
+            ['name' => 'Kubernetes', 'icon' => 'fas fa-dharmachakra', 'es' => 'Aprendiz de', 'de' => 'Lehrling von'],
+        ];
+
         if (DB::table('steps')->where('key', 'umg-2020')->doesntExist()) {
             $stepId = DB::table('steps')->insertGetId([
                 'init' => '2020-01-01',
@@ -191,6 +232,72 @@ class UpdateProfessionalTimeline extends Migration
                 'created_at' => $now,
                 'updated_at' => $now,
             ]);
+
+            $technologyBoxId = DB::table('boxes')->insertGetId([
+                'name' => json_encode([
+                    'es' => 'Tecnologías',
+                    'de' => 'Technologien',
+                ]),
+                'icon' => 'fas fa-microchip',
+                'type' => 2,
+                'content' => 'Tecnologías',
+                'step_id' => $stepId,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
+
+            foreach ($umgTechnologies as $technology) {
+                $product = DB::table('products')->where('name', $technology['name'])->first();
+
+                if (!$product) {
+                    $productId = DB::table('products')->insertGetId([
+                        'name' => $technology['name'],
+                        'icon' => $technology['icon'],
+                        'tech' => true,
+                        'me' => true,
+                        'agregar' => json_encode([
+                            'es' => $technology['es'],
+                            'de' => $technology['de'],
+                            'en' => $technology['es'],
+                        ]),
+                        'antes' => true,
+                        'inicio' => true,
+                        'created_at' => $now,
+                        'updated_at' => $now,
+                    ]);
+                } else {
+                    $productId = $product->id;
+                }
+
+                DB::table('box_product')->updateOrInsert([
+                    'box_id' => $technologyBoxId,
+                    'product_id' => $productId,
+                ]);
+            }
+        }
+
+        $languages = [
+            'Español — nativo',
+            'Alemán — C1',
+            'Inglés — B2',
+            'Italiano — A1',
+            'Islandés — A1',
+        ];
+
+        foreach ($languages as $language) {
+            if (DB::table('products')->where('name', $language)->doesntExist()) {
+                DB::table('products')->insert([
+                    'name' => $language,
+                    'icon' => 'fas fa-language',
+                    'tech' => true,
+                    'me' => true,
+                    'agregar' => null,
+                    'antes' => true,
+                    'inicio' => false,
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ]);
+            }
         }
     }
 
