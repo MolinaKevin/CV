@@ -37,6 +37,6 @@ class ContactEmail extends Mailable
         return $this->from(config('mail.from.address'), config('mail.from.name'))
                     ->view('mails.contact')
                     ->text('mails.contact_plain')
-                    ->subject(__('Respuesta automatica'));
+                    ->subject(__('Confirmación de contacto'));
     }
 }

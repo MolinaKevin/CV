@@ -1,16 +1,16 @@
 {{ __('Hola') }} {{ $email->sender }},
 
-{{ __('Muchas gracias por ponerte en contacto conmigo. Recibirá una respuesta de mi parte a la brevedad.') }}
+{{ __('Gracias por escribirme. Ya recibí tu mensaje y te responderé apenas pueda.') }}
 
-{{ __('Aquí puede ver el contenido del mensaje que me ha enviado:') }}
+{{ __('Tu mensaje') }}:
 
 --------------------------------------
 {{ $email->message }}
 --------------------------------------
 
-{{ __('Si usted no se ha puesto en contacto conmigo, tenga en cuenta que alguien pudiere estar usando sus credenciales.') }}
+{{ __('Si no enviaste este mensaje, podés ignorar este correo.') }}
 
-{{ __('Muchas gracias') }}
+{{ __('Saludos,') }}
 
 
     Kevin Molina

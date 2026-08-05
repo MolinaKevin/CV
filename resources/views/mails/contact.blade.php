@@ -1,29 +1,38 @@
 <!doctype html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>{{ __ ('Respuesta automatica') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ __('Confirmación de contacto') }}</title>
 </head>
-<body>
-    {{ __('Hola') }} <i>{{ $email->sender }}</i>,
-    <br/>
-    <br/>
-    <p>{{ __('Muchas gracias por ponerte en contacto conmigo. Recibirá una respuesta de mi parte a la brevedad.') }}</p>
+<body style="margin: 0; padding: 0; background: #f2f6f7; color: #001946; font-family: Arial, Helvetica, sans-serif;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="padding: 32px 16px; background: #f2f6f7;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 600px; overflow: hidden; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 18px rgba(0, 25, 70, .12);">
+                    <tr>
+                        <td style="padding: 24px 32px; background: #025373; color: #f5fafa;">
+                            <div style="font-size: 21px; font-weight: 700;">Kevin Molina</div>
+                            <div style="padding-top: 4px; font-size: 14px; opacity: .9;">{{ __('Confirmación de contacto') }}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 32px; font-size: 16px; line-height: 1.6;">
+                            <p style="margin: 0 0 20px;">{{ __('Hola') }} <strong>{{ $email->sender }}</strong>,</p>
+                            <p style="margin: 0 0 24px;">{{ __('Gracias por escribirme. Ya recibí tu mensaje y te responderé apenas pueda.') }}</p>
 
-    <p>{{ __('Aquí puede ver el contenido del mensaje que me ha enviado:') }}</p>
+                            <div style="margin: 0 0 24px; padding: 18px; border-left: 4px solid #8ab0bf; background: #f5fafa;">
+                                <div style="margin-bottom: 8px; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #025373;">{{ __('Tu mensaje') }}</div>
+                                <div style="white-space: pre-wrap;">{{ $email->message }}</div>
+                            </div>
 
-    <div style="width: 100%; border:1px solid #000; padding-top: 5px; padding-bottom: 5px;">
-    {{ $email->message }}
-    </div>
-    <br/>
-    <p>{{ __('Si usted no se ha puesto en contacto conmigo, tenga en cuenta que alguien pudiere estar usando sus credenciales.') }}</p>
-
-    {{ __('Muchas gracias') }}
-    <br/>
-    <br/>
-    <i>Kevin Molina</i>
-    <br/>
-    <a href="https://molinakev.in">https://molinakev.in</a>
+                            <p style="margin: 0 0 24px; color: #52606d; font-size: 14px;">{{ __('Si no enviaste este mensaje, podés ignorar este correo.') }}</p>
+                            <p style="margin: 0;">{{ __('Saludos,') }}<br><strong>Kevin Molina</strong><br><a href="https://molinakev.in" style="color: #025373;">molinakev.in</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
