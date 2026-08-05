@@ -5,7 +5,7 @@
 
 		<div class="p-4 md:p-12 text-center lg:text-left">
 			<!-- Image for mobile view-->
-			<div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('{{ asset('storage/images/yo.jfif') }}')"></div>
+			<div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('{{ asset('images/yo.jfif') }}')"></div>
 
 			<h1 class="text-3xl text-paleta-secundario font-bold pt-8 lg:pt-0">Kevin Molina</h1>
 			<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-paleta-quinario "></div>
@@ -57,7 +57,7 @@
 	<!--Img Col-->
 	<div class="w-full lg:w-3/5">
 		<!-- Big profile image for side bar (desktop) -->
-		<img src="{{ asset('storage/images/yo.jfif') }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+		<img src="{{ asset('images/yo.jfif') }}" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
 		<!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
 
 	</div>
