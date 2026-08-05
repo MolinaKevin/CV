@@ -129,14 +129,12 @@
                         wire:click="showMore({{ $step->id }})"
                     @endif
                 >
+                    <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
+                    <p class="font-semibold text-paleta-cuaternario {{ $active == $step->id ? 'mb-4' : '' }}">{!! $stepValue($step, 'place') !!}</p>
                     @if($active == $step->id)
-                        <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
-                        <p class="font-semibold text-paleta-cuaternario mb-4">{!! $stepValue($step, 'place') !!}</p>
                         <div wire:key="timeline-experience-{{ $step->id }}">
                             <livewire:experience :step="$active" :key="'experience-' . $active" />
                         </div>
-                    @else
-                        <h2 class="text-2xl font-medium text-paleta-secundario title-font">{!! $stepValue($step, 'place') !!}</h2>
                     @endif
                 </div>
             </article>
