@@ -138,22 +138,23 @@
             </article>
         @endforeach
     </div>
-    <x-image-modal wire:model="modal" maxWidth="5xl">
-        <x-slot name="title">
-        </x-slot>
+    @if($modal && $screen)
+        <x-image-modal wire:model="modal" maxWidth="5xl">
+            <x-slot name="title">
+            </x-slot>
 
-        <x-slot name="content">
-		    <img src="{{ asset('storage/images/' . $screen->path) }}" class="mx-auto rounded-none shadow-2xl block max-h-screen">
-        </x-slot>
+            <x-slot name="content">
+		        <img src="{{ asset('storage/images/' . $screen->path) }}" class="mx-auto rounded-none shadow-2xl block max-h-screen">
+            </x-slot>
 
-        <x-slot name="footer">
-            <p class="text-2xl text-left">
-                {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
-            <p/>
-            <p class="text-justify">
-                {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
-            </p>
-
-        </x-slot>
-    </x-image-modal>
+            <x-slot name="footer">
+                <p class="text-2xl text-left">
+                    {{ $screen->getTranslation('title', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) }}
+                </p>
+                <p class="text-justify">
+                    {!! $screen->getTranslation('content', \Session::get('locale') ? \Session::get('locale') : \App::getLocale() ) !!}
+                </p>
+            </x-slot>
+        </x-image-modal>
+    @endif
 </div>

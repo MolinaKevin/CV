@@ -15,4 +15,4 @@
         {{ $footer }}
     </div>
 
-</x-modal>
+</x-modal-alt>
