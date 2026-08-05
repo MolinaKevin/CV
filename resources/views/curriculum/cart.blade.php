@@ -126,7 +126,7 @@
                         <span class="text-blue-600 dark:text-blue-400 text-xs font-medium uppercase">Kevin Alejandro Molina</span>
                         <br />
                         @if($selectionIn)
-                            Skills coincidentes:
+                            {{ __('Skills coincidentes:') }}
                             <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
                                 @foreach($selectionIn as $select)
                                   <div class="p-2 sm:w-1/2 w-full">
@@ -142,7 +142,7 @@
                             </div>
                         @endif
                         @if($selectionOut)
-                            Skills no coincidentes:
+                            {{ __('Skills no coincidentes:') }}
                             <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
                                 @foreach($selectionOut as $select)
                                   <div class="p-2 sm:w-1/2 w-full">
@@ -158,7 +158,7 @@
                             </div>
                         @endif
                         @if($selectionDiverse)
-                            Tecnolog&iacute;as en aprendizaje:
+                            {{ __('Tecnologías en aprendizaje:') }}
                             <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
                                 @foreach($selectionDiverse as $select)
                                   <div class="p-2 sm:w-1/2 w-full">
@@ -183,5 +183,4 @@
         </x-slot>
     </x-dialog-modal>
 </div>
-
 

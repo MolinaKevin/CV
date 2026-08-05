@@ -1,7 +1,9 @@
 @php
     $locale = \Session::get('locale') ? \Session::get('locale') : \App::getLocale();
     $stepValue = function ($step, $field) use ($locale) {
-        return $step->getTranslation($field, $locale, false) ?: $step->getRawOriginal($field);
+        return $step->getTranslation($field, $locale, false)
+            ?: $step->getTranslation($field, 'es', false)
+            ?: $step->getRawOriginal($field);
     };
 @endphp
 

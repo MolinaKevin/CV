@@ -37,5 +37,6 @@
     "Nombre": "Name",
     "Asunto": "Betreff",
     "Mensaje": "Nachricht",
-    "Email": "Email-Adresse"
+    "Email": "Email-Adresse",
+    "Present": "Heute"
 }

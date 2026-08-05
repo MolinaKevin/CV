@@ -1,10 +1,14 @@
 @php
     $locale = \Session::get('locale') ? \Session::get('locale') : \App::getLocale();
     $boxLabel = function ($box) use ($locale) {
-        return $box->getTranslation('name', $locale, false) ?: $box->getRawOriginal('name');
+        return $box->getTranslation('name', $locale, false)
+            ?: $box->getTranslation('name', 'es', false)
+            ?: $box->getRawOriginal('name');
     };
     $boxContent = function ($box) use ($locale) {
-        return $box->getTranslation('content', $locale, false) ?: $box->getRawOriginal('content');
+        return $box->getTranslation('content', $locale, false)
+            ?: $box->getTranslation('content', 'es', false)
+            ?: $box->getRawOriginal('content');
     };
 @endphp
 

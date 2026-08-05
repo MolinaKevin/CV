@@ -25,7 +25,7 @@ class Step extends Model
     }
 
     public function getFinishAttribute($value) {
-        return Carbon::parse($this->end)->year == "1950" ? "Hoy" :  Carbon::parse($this->end)->year ;
+        return Carbon::parse($this->end)->year == "1950" ? __('Present') : Carbon::parse($this->end)->year;
     }
 
     /** Relations **/
