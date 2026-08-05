@@ -143,7 +143,7 @@ class UpdateProfessionalTimeline extends Migration
         DB::table('steps')
             ->where('place', 'Maschinenhandel Meyer')
             ->update([
-                'end' => '2020-12-31',
+                'end' => '2021-12-31',
                 'title' => json_encode([
                     'es' => 'Desarrollador de software y administrador IT',
                     'de' => 'Softwareentwickler & IT-Administrator',
@@ -198,7 +198,7 @@ class UpdateProfessionalTimeline extends Migration
 
         if (DB::table('steps')->where('key', 'umg-2020')->doesntExist()) {
             $stepId = DB::table('steps')->insertGetId([
-                'init' => '2020-01-01',
+                'init' => '2021-01-01',
                 'end' => '1950-01-01',
                 'title' => json_encode([
                     'es' => 'Site Reliability Engineer y Product Owner',
