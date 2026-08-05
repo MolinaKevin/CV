@@ -34,6 +34,8 @@ class Contact extends Component
     public function contactSubmit()
     {
         $this->validate();
+        $this->feedback = '';
+        $this->feedbackType = '';
 
         $email = new \stdClass();
         $email->message = $this->message;
@@ -69,6 +71,12 @@ class Contact extends Component
             $this->to = "offers@molinakev.in";
         }
         $this->active = $id;
+    }
+
+    public function clearFeedback()
+    {
+        $this->feedback = '';
+        $this->feedbackType = '';
     }
 
     private function clearFields()
