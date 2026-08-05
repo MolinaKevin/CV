@@ -13,10 +13,25 @@
 @endphp
 
 <section class="body-font">
+    <style>
+        .cv-experience-content p + p {
+            margin-top: .75rem;
+        }
+
+        .cv-experience-content ul {
+            margin: .75rem 0 0;
+            padding-left: 1.5rem;
+            list-style: disc;
+        }
+
+        .cv-experience-content li + li {
+            margin-top: .4rem;
+        }
+    </style>
     <div class="flex flex-col text-center w-full pb-2">
         @switch($selected->type)
             @case(1)
-                <p class="lg:w-100 mx-auto text-justify leading-relaxed text-paleta-secundario">{!! $boxContent($selected) !!}</p>
+                <div class="cv-experience-content lg:w-100 mx-auto text-left leading-relaxed text-paleta-secundario">{!! $boxContent($selected) !!}</div>
                 @break
             @case(2)
                 <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
