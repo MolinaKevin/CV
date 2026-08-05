@@ -13,8 +13,8 @@
                 @break
             @case(2)
                 <div class="flex flex-wrap lg:w-full sm:mx-auto sm:mb-2 -mx-2">
-                    @foreach($selected->products as $product)
-                        <div class="p-2 sm:w-1/5 w-full">
+                        @foreach($selected->products as $product)
+                        <div wire:key="experience-product-{{ $product->id }}" class="p-2 sm:w-1/5 w-full">
                             <div class="bg-paleta-primario rounded flex p-4 h-full items-center">
                                 <i class="{{ $product->icon }} fa-2x text-paleta-secundario w-6 h-6 flex-shrink-0 mr-4"></i>
                                 <span class="title-font font-medium">{{ $product->name }}</span>
@@ -83,9 +83,10 @@
     <div class="flex mx-auto flex-wrap mb-2 divide-x-2 divide-paleta-secundario border-2 border-paleta-secundario">
         @foreach($boxes as $box)
             <a
+                wire:key="experience-box-{{ $box->id }}"
                 class="px-6 py-3 text-sm justify-center title-font font-medium bg-paleta-primario inline-flex items-center leading-none {{ $selected->id == $box->id ? 'border-paleta-secundario text-paleta-primario bg-paleta-cuaternario' : 'border-paleta-secundario text-paleta-secundario '  }} hover:text-paleta-primario hover:bg-paleta-cuaternario tracking-wider cursor-pointer md:px-12 lg:text-base"
                 style="width: {{ 100 / max($count, 1) }}%;"
-                wire:click="$emit('changeBox',{{ $box->id }})"
+                wire:click="changeBox({{ $box->id }})"
             >
                 <i class="w-5 h-5 mr-3 {{ $box->icon }}"></i>
                 <span class="uppercase">{!! $boxLabel($box) !!}</span>

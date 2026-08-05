@@ -13,8 +13,7 @@ class Experience extends Component
     public $selected;
 
     protected $listeners = [
-        'timelineSelect',
-        'changeBox'
+        'timelineSelect'
     ];
 
     public function mount() {
