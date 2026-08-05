@@ -16,6 +16,8 @@ class Contact extends Component
     public $subject = '';
     public $active = 1;
     public $to = "offers@molinakev.in";
+    public $feedback = '';
+    public $feedbackType = '';
 
     protected $rules = [
         'name' => 'required',
@@ -48,14 +50,14 @@ class Contact extends Component
                 'exception' => $exception,
             ]);
 
-            $this->emit('message', __('No pude enviar el mensaje en este momento. Podés escribirme directamente a i@molinakev.in.'));
-            $this->emit('showAlert');
+            $this->feedback = __('No pude enviar el mensaje en este momento. Podés escribirme directamente a i@molinakev.in.');
+            $this->feedbackType = 'error';
 
             return;
         }
 
-        $this->emit('message', __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.'));
-        $this->emit('showAlert');
+        $this->feedback = __('Mensaje enviado con exito. Muchas gracias por ponerse en contacto conmigo.');
+        $this->feedbackType = 'success';
         $this->clearFields();
     }
 
