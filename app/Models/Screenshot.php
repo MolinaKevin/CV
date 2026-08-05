@@ -15,6 +15,15 @@ class Screenshot extends Model
 
     protected  $fillable = ['path','title','subtitle','content','box_id'];
 
+    public function getUrlAttribute()
+    {
+        if (strpos($this->path, 'images/') === 0) {
+            return asset($this->path);
+        }
+
+        return asset('storage/images/' . $this->path);
+    }
+
     /** Relations **/
 
     public function box() {

@@ -27,7 +27,10 @@ class Timeline extends Component
     public function render()
     {
         return view('curriculum.timeline',[
-            'steps' => Step::orderBy('init', 'DESC')->orderBy('id', 'DESC')->get()
+            'steps' => Step::orderByRaw("CASE WHEN `key` = ? THEN 0 ELSE 1 END", ['umg-2020'])
+                ->orderBy('init', 'DESC')
+                ->orderBy('id', 'DESC')
+                ->get()
         ])->layout('layouts.cv');
     }
 
