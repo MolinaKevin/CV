@@ -5,6 +5,7 @@
     };
 @endphp
 
+<div>
 <style>
     .cv-timeline {
         --timeline-line: #025373;
@@ -115,7 +116,6 @@
     }
 </style>
 
-<div>
     <div class="cv-timeline">
         @foreach($steps as $step)
             <article class="cv-timeline-item js-show-on-scroll">
