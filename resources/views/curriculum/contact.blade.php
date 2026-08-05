@@ -1,6 +1,6 @@
 <div class="w-full h-full sm:h-5/6 text-gray-600 body-font relative">
     <div class="absolute inset-0 bg-gray-300">
-        <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps?q=Potsdam%2C%20Germany&amp;z=12&amp;output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Mapa de Potsdam" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=12.963%2C52.352%2C13.166%2C52.448&amp;layer=mapnik&amp;marker=52.400%2C13.060" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
     </div>
     <div class="container w-full sm:py-10 px-8 mx-auto flex">
         <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
