@@ -1,6 +1,6 @@
 <div class="w-full h-full sm:h-5/6 text-gray-600 body-font relative">
     <div class="absolute inset-0 bg-gray-300">
-        <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79414.4675204447!2d9.856813326380006!3d51.53702337775974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a4d4b86f98cac7%3A0x425ac6d94ac3e30!2sG%C3%B6ttingen%2C%20Germany!5e0!3m2!1sen!2sus!4v1611048382620!5m2!1sen!2sus" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps?q=Potsdam%2C%20Germany&amp;z=12&amp;output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
     </div>
     <div class="container w-full sm:py-10 px-8 mx-auto flex">
         <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">

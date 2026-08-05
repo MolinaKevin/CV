@@ -109,29 +109,25 @@
 
         TxtRotate.prototype.tick = function() {
             var i = this.loopNum % this.toRotate.length;
-            var j = (i == 0) ? 0 : i - 1;
-            var lastDev = this.toRotate[j].developer;
+            var technology = this.toRotate[i] || {};
             var lang = "{{ app()->getLocale() }}";
             console.log("lang: " + lang);
 
     console.log('session locale: @json(Session::get("locale"))');
     console.log('app locale: @json(App::getLocale())');
-            var addTxt = this.toRotate[i].agregar[lang];
-            var fullTxt = this.toRotate[i].name;
-            var antes = this.toRotate[i].antes;
-            var inicio = 0;
-            var temp = false;
-            if (lastDev != dev) {
-                inicio = 14;
+            var prefixes = technology.agregar || {};
+            var addTxt = typeof prefixes === 'object'
+                ? (prefixes[lang] || prefixes.es || prefixes.de || '')
+                : prefixes;
+            var fullTxt = technology.name || '';
+
+            if (addTxt) {
+                if (lang == 'de' && technology.antes == 1) {
+                    fullTxt = fullTxt + "-" + addTxt;
+                } else {
+                    fullTxt = addTxt + " " + fullTxt;
+                }
             }
-            if (lang == 'es') {
-                fullTxt = addTxt + " " + fullTxt;
-            } else if (lang == 'de' && antes == 1) {
-                fullTxt =  fullTxt + "-" + addTxt;
-            } else {
-                fullTxt = addTxt + " " + fullTxt;
-            }
-            var dev = this.toRotate[i].developer;
 
             if (this.isDeleting) {
                 this.txt = fullTxt.substring(0, this.txt.length - 1);
