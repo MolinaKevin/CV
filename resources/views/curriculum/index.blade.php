@@ -119,7 +119,7 @@
 
             if (addTxt) {
                 if (lang == 'de' && technology.antes == 1) {
-                    fullTxt = fullTxt + "-" + addTxt;
+                    fullTxt = fullTxt + "-" + addTxt.replace(/\s+(von|mit|in|bei)$/, '');
                 } else {
                     fullTxt = addTxt + " " + fullTxt;
                 }
