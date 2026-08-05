@@ -5,35 +5,131 @@
     };
 @endphp
 
+<style>
+    .cv-timeline {
+        --timeline-line: #025373;
+        --timeline-card: #F5FAFA;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem;
+    }
+
+    .cv-timeline::before {
+        content: '';
+        position: absolute;
+        top: 3.5rem;
+        bottom: 3.5rem;
+        left: 15.5rem;
+        width: 2px;
+        background: var(--timeline-line);
+        opacity: .45;
+    }
+
+    .cv-timeline-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 14rem minmax(0, 1fr);
+        column-gap: 3rem;
+        padding: 0 0 2.5rem;
+    }
+
+    .cv-timeline-meta {
+        padding-top: 1.25rem;
+        text-align: right;
+    }
+
+    .cv-timeline-marker {
+        position: absolute;
+        top: 1.8rem;
+        left: 15.5rem;
+        width: 1rem;
+        height: 1rem;
+        transform: translateX(-50%);
+        border: 3px solid var(--timeline-line);
+        border-radius: 9999px;
+        background: #8AB0BF;
+        box-shadow: 0 0 0 5px #8AB0BF;
+    }
+
+    .cv-timeline-card {
+        position: relative;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 25, 70, .18);
+        border-radius: 1rem;
+        background: var(--timeline-card);
+        box-shadow: 0 12px 28px rgba(0, 25, 70, .12);
+    }
+
+    .cv-timeline-card::before {
+        content: '';
+        position: absolute;
+        top: 1.6rem;
+        left: -0.6rem;
+        width: 1rem;
+        height: 1rem;
+        transform: rotate(45deg);
+        border-bottom: 1px solid rgba(0, 25, 70, .18);
+        border-left: 1px solid rgba(0, 25, 70, .18);
+        background: var(--timeline-card);
+    }
+
+    @media (max-width: 767px) {
+        .cv-timeline::before {
+            left: 1.6rem;
+        }
+
+        .cv-timeline-item {
+            display: block;
+            padding: 0 0 2rem 3.5rem;
+        }
+
+        .cv-timeline-meta {
+            padding: 0 0 .75rem;
+            text-align: left;
+        }
+
+        .cv-timeline-marker {
+            top: .35rem;
+            left: 1.6rem;
+        }
+
+        .cv-timeline-card::before {
+            top: -0.55rem;
+            left: 1.25rem;
+            border-top: 1px solid rgba(0, 25, 70, .18);
+            border-right: 1px solid rgba(0, 25, 70, .18);
+            border-bottom: 0;
+            border-left: 0;
+        }
+    }
+</style>
+
 <div>
-    <div class="container px-5 py-24 mx-auto">
-        <div class="-my-8 divide-y-2 divide-paleta-secundario ">
-            @foreach($steps as $step)
-                <div class="flex flex-col">
-                    <div class="pt-8 pb-1 flex flex-wrap md:flex-nowrap js-show-on-scroll ">
-                        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                            <span class="font-semibold title-font text-paleta-secundario">{!! $stepValue($step, 'place') !!}</span>
-                            <span class="mt-1 text-paleta-secundario opacity-75 text-sm">{{ $step->begin }} - {{ $step->finish }}</span>
-                        </div>
-                        <div class="md:flex-grow">
-                            <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
-                            @if($active != $step->id)
-                                <p class="leading-relaxed text-paleta-secundario text-justify">{!! $stepValue($step, 'description') !!}</p>
-                                <a wire:click="$emit('timelineSelect',{{ $step->id }})" class="text-paleta-secundario inline-flex items-center mt-4 cursor-pointer">{{ __('Leer mas') }}
-                                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                            @endif
-                        </div>
-                    </div>
-                    @if($active == $step->id)
+    <div class="cv-timeline">
+        @foreach($steps as $step)
+            <article class="cv-timeline-item js-show-on-scroll">
+                <div class="cv-timeline-meta">
+                    <span class="block font-semibold title-font text-paleta-secundario">{!! $stepValue($step, 'place') !!}</span>
+                    <span class="mt-1 block text-paleta-secundario opacity-75 text-sm">{{ $step->begin }} - {{ $step->finish }}</span>
+                </div>
+                <span class="cv-timeline-marker" aria-hidden="true"></span>
+                <div class="cv-timeline-card">
+                    <h2 class="text-2xl font-medium text-paleta-secundario title-font mb-2">{!! $stepValue($step, 'title') !!}</h2>
+                    @if($active != $step->id)
+                        <p class="leading-relaxed text-paleta-secundario text-justify">{!! $stepValue($step, 'description') !!}</p>
+                        <a wire:click="$emit('timelineSelect',{{ $step->id }})" class="text-paleta-secundario inline-flex items-center mt-4 cursor-pointer">{{ __('Leer mas') }}
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    @else
                         <livewire:experience :step="$active" />
                     @endif
                 </div>
-            @endforeach
-        </div>
+            </article>
+        @endforeach
     </div>
     <x-image-modal wire:model="modal" maxWidth="5xl">
         <x-slot name="title">
