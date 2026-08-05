@@ -126,13 +126,13 @@
                 <div
                     class="cv-timeline-card {{ $active != $step->id ? 'cv-timeline-card--collapsible' : '' }}"
                     @if($active != $step->id)
-                        wire:click="$emit('timelineSelect',{{ $step->id }})"
+                        wire:click="showMore({{ $step->id }})"
                     @endif
                 >
                     <h2 class="text-2xl font-medium text-paleta-secundario title-font {{ $active == $step->id ? 'mb-2' : '' }}">{!! $stepValue($step, 'place') !!}</h2>
                     @if($active == $step->id)
                         <p class="font-semibold text-paleta-cuaternario mb-4">{!! $stepValue($step, 'title') !!}</p>
-                        <livewire:experience :step="$active" />
+                        <livewire:experience :step="$active" :key="'experience-' . $active" />
                     @endif
                 </div>
             </article>
