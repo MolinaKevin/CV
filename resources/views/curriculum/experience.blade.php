@@ -27,20 +27,68 @@
                 </div>
                 @break
             @case(3)
-                @php($location = trim(strip_tags($boxContent($selected))))
-                <div class="rounded-lg border-2 border-paleta-cuaternario bg-paleta-primario p-10 text-center">
-                    <i class="fas fa-map-marker-alt fa-3x text-paleta-cuaternario mb-4"></i>
-                    <h2 class="title-font font-semibold text-paleta-secundario tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
-                    <p class="mt-2 text-paleta-secundario">{{ $location }}</p>
-                    <a
-                        class="inline-flex mt-5 items-center text-paleta-cuaternario hover:text-paleta-secundario font-semibold"
-                        href="https://www.google.com/maps/search/?api=1&amp;query={{ rawurlencode($location) }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Ver en Google Maps <i class="fas fa-external-link-alt ml-2"></i>
-                    </a>
-                </div>
+                @php
+                    $location = trim(strip_tags($boxContent($selected)));
+                    $knownLocations = [
+                        'universitätsmedizin göttingen' => [51.552, 9.944],
+                        'göttingen' => [51.534, 9.935],
+                        'potsdam' => [52.400, 13.060],
+                        'brandsen' => [-35.168, -58.234],
+                        'punta lara' => [-34.822, -57.977],
+                        'la plata' => [-34.921, -57.955],
+                    ];
+                    $coordinates = null;
+
+                    foreach ($knownLocations as $needle => $point) {
+                        if (mb_stripos($location, $needle) !== false) {
+                            $coordinates = $point;
+                            break;
+                        }
+                    }
+                @endphp
+                @if($coordinates)
+                    @php
+                        [$latitude, $longitude] = $coordinates;
+                        $bbox = implode(',', [
+                            $longitude - 0.06,
+                            $latitude - 0.04,
+                            $longitude + 0.06,
+                            $latitude + 0.04,
+                        ]);
+                    @endphp
+                    <div class="h-100 bg-gray-300 rounded-lg overflow-hidden p-10 py-56 pb-2 pl-8 flex items-end justify-start relative">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            class="absolute inset-0"
+                            frameborder="0"
+                            title="Mapa de {{ $location }}"
+                            scrolling="no"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox={{ rawurlencode($bbox) }}&amp;layer=mapnik&amp;marker={{ $latitude }}%2C{{ $longitude }}"
+                            style="filter: grayscale(1) contrast(1.2) opacity(0.4);"
+                        ></iframe>
+                        <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+                            <div class="px-8">
+                                <h2 class="title-font font-semibold text-paleta-secundario tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
+                                <p class="mt-1 text-paleta-secundario">{{ $location }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="rounded-lg border-2 border-paleta-cuaternario bg-paleta-primario p-10 text-center">
+                        <i class="fas fa-map-marker-alt fa-3x text-paleta-cuaternario mb-4"></i>
+                        <h2 class="title-font font-semibold text-paleta-secundario tracking-widest text-xs">{{ __('LOCACIÓN') }}</h2>
+                        <p class="mt-2 text-paleta-secundario">{{ $location }}</p>
+                        <a
+                            class="inline-flex mt-5 items-center text-paleta-cuaternario hover:text-paleta-secundario font-semibold"
+                            href="https://www.openstreetmap.org/search?query={{ rawurlencode($location) }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver en OpenStreetMap <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                @endif
                 @break
             @case(4)
                 <div class="container px-5 py-4 mx-auto">
